@@ -1,0 +1,9 @@
+
+*.vsidx
+*.lock
+Test/.vs/Test/v17/.suo
+*.editorconfig
+Test/Test/obj/Debug/net6.0/Test.GlobalUsings.g.cs
+*.cache
+*.targets
+*.props
