@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\SEMESTER8\\SWP391\\Project\\SWP391_BL5_G5\\Test\\Test\\Test.csproj": {}
+    "D:\\Study\\SEMESTER8\\SWP391\\Project\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\SneakerOnlineShop.csproj": {}
   },
   "projects": {
-    "D:\\Study\\SEMESTER8\\SWP391\\Project\\SWP391_BL5_G5\\Test\\Test\\Test.csproj": {
+    "D:\\Study\\SEMESTER8\\SWP391\\Project\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\SneakerOnlineShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\SEMESTER8\\SWP391\\Project\\SWP391_BL5_G5\\Test\\Test\\Test.csproj",
-        "projectName": "Test",
-        "projectPath": "D:\\Study\\SEMESTER8\\SWP391\\Project\\SWP391_BL5_G5\\Test\\Test\\Test.csproj",
+        "projectUniqueName": "D:\\Study\\SEMESTER8\\SWP391\\Project\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\SneakerOnlineShop.csproj",
+        "projectName": "SneakerOnlineShop",
+        "projectPath": "D:\\Study\\SEMESTER8\\SWP391\\Project\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\SneakerOnlineShop.csproj",
         "packagesPath": "C:\\Users\\Vi Tuan Vu\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\SEMESTER8\\SWP391\\Project\\SWP391_BL5_G5\\Test\\Test\\obj\\",
+        "outputPath": "D:\\Study\\SEMESTER8\\SWP391\\Project\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vi Tuan Vu\\AppData\\Roaming\\NuGet\\NuGet.Config",
