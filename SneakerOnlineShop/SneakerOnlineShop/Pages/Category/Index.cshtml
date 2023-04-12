@@ -31,7 +31,19 @@
     </ul>
 </div>
 <div id="content-right">
-    <div class="path">@productPerPage[0].Category.CategoryName</div>
+    <div class="path">@productPerPage[0].Category.CategoryName</b></div>
+    <div>
+        <a href="~/category/index?id=@productPerPage[0].CategoryId&numPage=@ViewData["page"]&sortOrder=priceAsc">
+            <button class="btnSort">
+                Sort By Price(ASC)
+            </button>
+        </a>
+        <a href="~/category/index?id=@productPerPage[0].CategoryId&numPage=@ViewData["page"]&sortOrder=priceDesc">
+            <button class="btnSort">
+                Sort By Price(DESC)
+            </button>
+        </a>
+    </div>
     <div class="content-main" style="flex-wrap: wrap">
 
         @foreach (var product in productPerPage)
