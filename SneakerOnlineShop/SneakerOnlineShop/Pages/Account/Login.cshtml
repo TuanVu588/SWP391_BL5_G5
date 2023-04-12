@@ -1,0 +1,119 @@
+﻿@page
+@model SneakerOnlineShop.Pages.Account.LoginModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Login Page </title>
+    <style>
+        #form {
+            margin: 50px auto;
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+        }
+
+        body {
+            background-image: url('../img/shoe-back.jpg');
+            width: 100%;
+        }
+
+        #header {
+            border-bottom: 1px solid saddlebrown;
+            padding-bottom: 0px;
+        }
+
+        #form-content {
+            width: 100%;
+            margin: 0px auto;
+        }
+
+            #form-content input[type="submit"], input[type="button"] {
+                width: 100%;
+                background-color: #4CAF50;
+                color: #fff;
+                margin-bottom: 15px;
+                line-height: 40px;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+            }
+
+        button {
+            background-color: #4CAF50;
+            width: 100%;
+            color: orange;
+            padding: 15px;
+            margin: 10px 0px;
+            border: none;
+            cursor: pointer;
+        }
+
+        form {
+            border: 3px solid #f1f1f1;
+            margin: 50px;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            margin: 8px 0;
+            padding: 12px 20px;
+            display: inline-block;
+            border: 2px solid green;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            opacity: 0.7;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            margin: 10px 5px;
+        }
+
+
+        .container {
+            padding: 25px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+@*<body>
+    <form>
+        <div class="container">
+            <label>Username : </label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+            <label>Password : </label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <button type="submit">Login</button>
+            <input type="checkbox" checked="checked"> Remember me
+            <button type="button" class="cancelbtn"> Cancel</button>
+        </div>
+    </form>
+</body>
+</html>*@
+<div id="form">
+    <div id="form-title">
+        <span><a href="~/account/signup">SIGN UP</a></span>
+        <span><a href="~/account/signin" style="color: red;">SIGN IN</a></span>
+    </div>
+    <div id="form-content">
+        <form action="" method="post">
+            <label>Email<span style="color: red;">*</span></label><br />
+            <input type="text" asp-for="Account.Email" /><br />
+            <span class="msg-error" asp-validation-for="Account.Email"></span><br />
+            <label>Password<span style="color: red;">*</span></label><br />
+            <input type="password" asp-for="Account.Password" /><br />
+            <span class="msg-error" asp-validation-for="Account.Password"></span><br />
+
+            <input type="submit" value="SIGN IN" /><br />
+
+        </form>
+    </div>
+</div>

@@ -1,34 +1,30 @@
-namespace SneakerOnlineShop
+using Microsoft.EntityFrameworkCore;
+using SneakerOnlineShop.Models;
+
+var builder = WebApplication.CreateBuilder(args);
+// Bo sung kien truc cho ung dung web vao container cua web server
+builder.Services.AddRazorPages();
+builder.Services.AddSignalR();
+builder.Services.AddDbContext<SWP391_DBContext>(opt =>
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("swp391db"));
+});
+//builder.Services.AddScoped<SWP391_DBContext>();
+builder.Services.AddSession(opt => opt.IdleTimeout = TimeSpan.FromMinutes(30));
 
-            // Add services to the container.
-            builder.Services.AddRazorPages();
-
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.MapRazorPages();
-
-            app.Run();
-        }
-    }
+var app = builder.Build();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
 }
+app.UseHttpsRedirection();
+app.UseRouting();
+
+app.UseAuthorization();
+app.UseStaticFiles();
+app.UseSession();
+app.MapRazorPages();
+//app.MapHub<SignalRServer>("/signalRServer");
+
+app.Run();
