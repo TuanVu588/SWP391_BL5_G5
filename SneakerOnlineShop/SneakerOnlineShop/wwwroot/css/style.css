@@ -178,6 +178,8 @@ body {
 }
 
 .product {
+    position: relative;
+    height: 350px;
     width: 25%;
     border: 1px solid saddlebrown;
     margin: 0px 10px;
@@ -185,9 +187,39 @@ body {
     text-align: center;
 }
 
-#product img{
-    width: 20%;
+.product .name a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
+
+.product .price {
+    color: gray;
+}
+
+.product .btnBuyNow {
+    position: absolute;
+    left: 60px;
+    right: 60px;
+    bottom: 10px;
+    background-color: chocolate;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 6px 8px;
+}
+
+    .product .btnBuyNow:hover {
+        background-color: brown;
+    }
+
+    .product .btnBuyNow a {
+        text-decoration: none;
+        color: white;
+    }
+
+    #product img {
+        width: 20%;
+    }
 
 #footer {
     margin-top: 1px;
@@ -295,7 +327,7 @@ body {
     padding:15px;
 }
 
-#product{
+#product {
     background-color: #fff;
     width: 100%;
     margin-bottom: 10px;
