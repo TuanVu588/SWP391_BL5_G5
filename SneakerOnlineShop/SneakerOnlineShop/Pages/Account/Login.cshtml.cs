@@ -11,7 +11,6 @@ namespace SneakerOnlineShop.Pages.Account
     public class LoginModel : PageModel
     {
         private readonly SWP391_DBContext dBContext;
-        private readonly CommonRole commonRole = new();
         [BindProperty]
         public Models.Account? account { get; set; }
 
