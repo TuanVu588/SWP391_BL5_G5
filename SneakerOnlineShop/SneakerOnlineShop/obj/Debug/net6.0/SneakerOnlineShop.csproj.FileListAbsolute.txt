@@ -66,3 +66,4 @@ F:\Semester 8\SWP391\SWPProject\SWP391_BL5_G5\SneakerOnlineShop\SneakerOnlineSho
 F:\Semester 8\SWP391\SWPProject\SWP391_BL5_G5\SneakerOnlineShop\SneakerOnlineShop\obj\Debug\net6.0\SneakerOnlineShop.csproj.CopyComplete
 F:\Semester 8\SWP391\SWPProject\SWP391_BL5_G5\SneakerOnlineShop\SneakerOnlineShop\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout1.cshtml.rz.scp.css
 F:\Semester 8\SWP391\SWPProject\SWP391_BL5_G5\SneakerOnlineShop\SneakerOnlineShop\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout2.cshtml.rz.scp.css
+F:\Semester 8\SWP391\SWPProject\SWP391_BL5_G5\SneakerOnlineShop\SneakerOnlineShop\bin\Debug\net6.0\Newtonsoft.Json.dll
