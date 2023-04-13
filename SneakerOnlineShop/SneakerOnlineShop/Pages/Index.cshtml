@@ -4,7 +4,58 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
+<div class="text-center" id="header">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@{
+    List<Category> categories = (List<Category>)ViewData["catergories"];
+    List<Product> products = (List<Product>)ViewData["products"];
+    List<Product> productPerPage = (List<Product>)ViewData["productPerPage"];
+    List<ProductImage> ProductImages = (List < ProductImage >) ViewData["ProductImages"];
+}
+
+<div id="content-left">
+    <h3>CATEGORY</h3>
+    <ul>
+        @foreach (var category in categories)
+        {
+            <a href="~/category/index?id=@category.CategoryId&numPage=1">
+            <li>@category.CategoryName</li></a>
+        }
+
+    </ul>
+</div>
+<div id="content-right" >
+    <div class="content-main" style="flex-wrap: wrap">
+        @if(products!=null || products.Count > 0)
+        {
+            @foreach (var p in productPerPage)
+            {
+                <div class="product" style="width: 20%; margin-bottom:10px">
+                    @foreach (var i in ProductImages){
+                        @if(i.ProductId.Equals(p.ProductId)){
+                            <a href="~/product/detail"><img src="~/img/@i.ImagePath" width="100%" /></a>
+                            break;
+                        }
+                    }
+                    
+                    <div class="name"><a href="~/product/detail">@p.ProductName</a></div>
+                    <div class="price">@p.UnitPrice</div>
+                    <div><a asp-page="/account/cart" asp-page-handler="buynow" asp-route-proid="4">Buy now</a></div>
+
+                </div>
+            } 
+        }
+    </div>
+    <div id="paging">
+        @for (int i = 1; i <= (int)ViewData["maxPage"]; i++)
+        {
+            <div class="pagination">
+                <a href="index?numPage=@i">@i</a>
+            </div>
+        }
+    </div>
+
 </div>
