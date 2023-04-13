@@ -1,3 +1,16 @@
 ﻿@{
-    Layout = "_Layout";
+    SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
+    //if(Context.Session.GetString("CustomerSession") != null)
+    //{
+    //    accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(Context.Session.GetString("CustomerSession"));
+    //}
+    //if (accSession.Role.RoleId == 1)//Admin
+    //{
+    //    Layout = "_Layout2";
+    //}
+    //else
+    //{
+    //    Layout = "_Layout1";
+    //}
+    Layout = "_Layout1";
 }
