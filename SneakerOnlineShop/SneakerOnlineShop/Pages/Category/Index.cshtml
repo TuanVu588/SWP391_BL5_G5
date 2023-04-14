@@ -1,0 +1,62 @@
+﻿@page
+@model SneakerOnlineShop.Pages.Category.IndexModel
+@{
+    List<Category> categories = (List<Category>)ViewData["categories"];
+    List<Product> productPerPage = (List<Product>)ViewData["productPerPage"];
+}
+<style>
+    .btnSort {
+        min-width: 150px;
+        background-color: brown;
+        color: #fff;
+        margin: 0 10px 10px 10px;
+        line-height: 40px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+
+        .btnSort:hover {
+            background-color: chocolate;
+        }
+</style>
+<div id="content-left">
+    <h3>CATEGORY</h3>
+    <ul>
+        @foreach (var category in categories)
+        {
+            <a href="~/category/index?id=@category.CategoryId&numPage=1">
+            <li>@category.CategoryName</li></a>
+        }
+    </ul>
+</div>
+<div id="content-right">
+    <div class="path">@productPerPage[0].Category.CategoryName</b></div>
+    <div>
+        <a href="~/category/index?id=@productPerPage[0].CategoryId&numPage=@ViewData["page"]&sortOrder=priceAsc">
+            <button class="btnSort">
+                Sort By Price(ASC)
+            </button>
+        </a>
+        <a href="~/category/index?id=@productPerPage[0].CategoryId&numPage=@ViewData["page"]&sortOrder=priceDesc">
+            <button class="btnSort">
+                Sort By Price(DESC)
+            </button>
+        </a>
+    </div>
+    <div class="content-main" style="flex-wrap: wrap">
+
+        @foreach (var product in productPerPage)
+        {
+            <div class="product" style="width: 20%; margin-bottom:10px">
+                <a href="~/product/detail"><img src="~/img/nike-while.jpg" width="100%" /></a>
+                <div class="name"><a href="~/product/detail">@product.ProductName</a></div>
+                <div class="price">$@(System.Math.Round((decimal)product.UnitPrice))</div>
+                <div class="btnBuyNow"><a asp-page="/account/cart" asp-page-handler="buynow" asp-route-proid="@product.ProductId">Buy now</a></div>
+            </div>
+        }
+
+    </div>
+   
+</div>
+
