@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MyRazorPage.common;
 using SneakerOnlineShop.Models;
@@ -18,16 +19,23 @@ namespace SneakerOnlineShop.Pages.Account
         {
             this.dBContext = dBContext;
         }
-        public IActionResult OnGet()
+     /*   public IActionResult OnGet()
         {
+
             return Page();
+        }*/
+        public void OnGet()
+        {
+            HttpContext.Session.Remove("account");
         }
-        public IActionResult OnPost()
+
+        public async Task<IActionResult> OnPostAsync()
         {
             if (ModelState.IsValid)
             {
-                account = findByEmailAndPassword(account.Email, account.Password);
-                if (account is not null)
+                var accounts = await dBContext.Accounts.SingleOrDefaultAsync(
+                  a => a.Email.Equals(account.Email) && a.Password.Equals(account.Password));
+                if (accounts is not null)
                 {
                     HttpContext.Session.SetString("account", JsonSerializer.Serialize(account));
 
@@ -37,7 +45,14 @@ namespace SneakerOnlineShop.Pages.Account
                     string json = session.GetString(key_access);
                     Console.WriteLine(json);
                     //TODO: return Page
-                    return Page();
+                    if (accounts.RoleId == 1)
+                    {
+                        return RedirectToPage("/admin/product/index");
+                    }
+                    else
+                    {
+                        return RedirectToPage("/index");
+                    }
                 }
                 else
                 {

@@ -17,10 +17,8 @@
 
   <ItemGroup>
     <Folder Include="Pages\Admin\Category\" />
-    <Folder Include="Pages\Admin\Product\" />
     <Folder Include="Pages\Admin\Order\" />
     <Folder Include="Pages\Category\" />
-    <Folder Include="Pages\Product\" />
   </ItemGroup>
 
 </Project>
