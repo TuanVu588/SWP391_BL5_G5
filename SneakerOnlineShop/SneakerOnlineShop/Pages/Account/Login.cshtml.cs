@@ -28,8 +28,8 @@ namespace SneakerOnlineShop.Pages.Account
         {
             if (ModelState.IsValid)
             {
-                var acc = await dBContext.Accounts.FirstOrDefaultAsync(
-                  a => a.Email.Equals(account.Email) && a.Password.Equals(account.Password));
+                var acc = await findByEmailAndPassword(account.Email, account.Email);
+
                 if (acc is not null)
                 {
                     HttpContext.Session.SetString("account", JsonSerializer.Serialize(acc));
@@ -58,11 +58,11 @@ namespace SneakerOnlineShop.Pages.Account
             return Page();
         }
 
-        public Models.Account findByEmailAndPassword(String email, String password)
+        public async Task<Models.Account> findByEmailAndPassword(String email, String password)
         {
-            var accountInDB = dBContext.Accounts
-                .FirstOrDefault(x => x.Email == email && x.Password == password);
-            return accountInDB;
+            var acc = await dBContext.Accounts.FirstOrDefaultAsync(
+                  a => a.Email.Equals(account.Email) && a.Password.Equals(account.Password));
+            return acc;
         }
     }
 }
