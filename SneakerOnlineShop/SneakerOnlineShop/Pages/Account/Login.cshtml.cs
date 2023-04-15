@@ -19,11 +19,6 @@ namespace SneakerOnlineShop.Pages.Account
         {
             this.dBContext = dBContext;
         }
-     /*   public IActionResult OnGet()
-        {
-
-            return Page();
-        }*/
         public void OnGet()
         {
             HttpContext.Session.Remove("account");
@@ -33,11 +28,11 @@ namespace SneakerOnlineShop.Pages.Account
         {
             if (ModelState.IsValid)
             {
-                var accounts = await dBContext.Accounts.SingleOrDefaultAsync(
+                var acc = await dBContext.Accounts.FirstOrDefaultAsync(
                   a => a.Email.Equals(account.Email) && a.Password.Equals(account.Password));
-                if (accounts is not null)
+                if (acc is not null)
                 {
-                    HttpContext.Session.SetString("account", JsonSerializer.Serialize(account));
+                    HttpContext.Session.SetString("account", JsonSerializer.Serialize(acc));
 
                     //read session
                     var session = HttpContext.Session;
@@ -45,7 +40,7 @@ namespace SneakerOnlineShop.Pages.Account
                     string json = session.GetString(key_access);
                     Console.WriteLine(json);
                     //TODO: return Page
-                    if (accounts.RoleId == 1)
+                    if (acc.RoleId == 3)
                     {
                         return RedirectToPage("/admin/product/index");
                     }
