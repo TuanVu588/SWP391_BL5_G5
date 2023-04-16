@@ -19,9 +19,10 @@ namespace SneakerOnlineShop.Models
         public DateTime? OrderDate { get; set; }
         //[DateGreaterThanNow(ErrorMessage = "The RequiredDate must be greater than current date and time.")]
         //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0: dd-MM-yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         [Required(ErrorMessage = "RequiredDate is required")]
         public DateTime? RequiredDate { get; set; }
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0: dd-MM-yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime? ShippedDate { get; set; }
         public decimal? Freight { get; set; }
         [Required(ErrorMessage = "ShipAddress is required")]

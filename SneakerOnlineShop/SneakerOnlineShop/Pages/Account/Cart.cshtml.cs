@@ -9,6 +9,7 @@ using SneakerOnlineShop.Models;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Text.Json;
 
@@ -20,7 +21,6 @@ namespace SneakerOnlineShop.Pages.Account
         IMapper _mapper;
         public List<Item> cart { get; set; }
         public double Total { get; set; }
-        public string ValidateRequiredDate { get; set; }
         [BindProperty]
         public Customer Customer { get; set; }
         [BindProperty]
@@ -32,39 +32,63 @@ namespace SneakerOnlineShop.Pages.Account
             _mapper = mapper;
         }
 
-        public void OnGet()
-        {   //set customer if they have session
-            SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
-            if (HttpContext.Session.GetString("account") != null)
-            {
-                accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("account"));
-            }
-            if(accSession != null && accSession.RoleId == 1) {
-                String cid = accSession.CustomerId;
-                var c = _dbContext.Customers.ToList();
-                var cus = _dbContext.Customers.FirstOrDefault(p => p.CustomerId == cid);
-                Customer = _dbContext.Customers.Where(c => c.CustomerId.Contains(cid)).SingleOrDefault();
-            }
-
-            cart = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
-            Total = (double)cart.Sum(i => i.ProductDTO.UnitPrice * i.Quantity);
+        public async Task OnGet()
+        {
+            setCustomerIfHaveSession();
+            setCart();
         }
+
         public async Task<IActionResult> OnPost()
         {
-            //check requiredDate
-            //int result = DateTime.Compare(date1, date2);
-            string relationship;
+            //To return Page();
+            setCustomerIfHaveSession();
+            setCart();
 
-            //if (result < 0)
-            //    relationship = "is earlier than";
-            //else if (result == 0)
-            //    relationship = "is the same time as";
-            //else
-            //    relationship = "is later than";
+            if (!ModelState.IsValid) {
+                return Page();
+            }
+            if (DateTime.Compare(DateTime.Now, (DateTime)Order.RequiredDate) > 0)
+            {
+                ViewData["Error"] = "RequireDate must be greatter than today";
+                return Page();
+            }
+            //Add to order
+            //Neu la khach moi thi customer, add order, order detail
+            if (Customer.CustomerId.Contains("-1"))//Customer new
+            {
+                //add customer
+                Customer cus = new Customer();
+                cus.CustomerId = RandomCustomerId(5);
+                cus.ContactName = Customer.ContactName;
+                cus.CompanyName = Customer.CompanyName;
+                cus.ContactTitle = Customer.ContactTitle;
+                cus.Address = Customer.Address;
+                cus.Phone = Customer.Phone;
 
-            //Customer new order
+                //save customer with order with order details
+                cus.Orders.Add(addOrderForCustomer(cus));
+                _dbContext.Customers.Add(cus);
+                _dbContext.SaveChanges();
+            }
+            else  //neu la khach cu --> add order theo customerId, order detail
+            {
+                //save customer
 
-            return RedirectToPage("/account/cart");
+                var cus = _dbContext.Customers.SingleOrDefault(cus => cus.CustomerId.Equals(Customer.CustomerId));
+                if (cus != null)
+                {
+                    cus.ContactName = Customer.ContactName;
+                    cus.CompanyName = Customer.CompanyName;
+                    cus.ContactTitle = Customer.ContactTitle;
+                    cus.Address = Customer.Address;
+                    cus.Phone = Customer.Phone;
+                    cus.Orders.Add(addOrderForCustomer(cus));
+                    _dbContext.SaveChanges();
+                }
+                 
+            }
+            ViewData["Success"] = "Order successfull --> go to profile to check order status";
+            return Page();
         }
             public IActionResult OnGetBuyNow(int proid)
         {
@@ -119,10 +143,6 @@ namespace SneakerOnlineShop.Pages.Account
             return RedirectToPage("Cart");
         }
 
-        private void saveCart(int[] quantities)
-        {
-        }
-
         private int Exists(List<Item> cart, int proid)
         {
             for (var i = 0; i < cart.Count; i++)
@@ -153,6 +173,43 @@ namespace SneakerOnlineShop.Pages.Account
             Product pro = _dbContext.Products.Include(p => p.ProductImages).Where(p => p.ProductId == id).SingleOrDefault();
             ProductDTO proDto =(ProductDTO)_mapper.Map<ProductDTO>(pro);
             return proDto;
+        }
+        private void setCustomerIfHaveSession()
+        {
+            SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
+            if (HttpContext.Session.GetString("account") != null)
+            {
+                accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("account"));
+            }
+            if (accSession != null && accSession.RoleId == 1)
+            {
+                String cid = accSession.CustomerId;// customer model must not be null
+                Customer = _dbContext.Customers.Where(c => c.CustomerId.Equals(cid)).SingleOrDefault();
+            }
+        }
+        private void setCart()
+        {
+            cart = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
+            Total = (double)cart.Sum(i => i.ProductDTO.UnitPrice * i.Quantity);
+        }
+        private Order addOrderForCustomer(Customer cus)
+        {
+            //add order cung voi customer
+            Order newOrder = new Order();
+            newOrder.OrderDate = DateTime.Now;
+            newOrder.ShipAddress = Order.ShipAddress;
+            newOrder.ShipCity = Order.ShipCity;
+            newOrder.RequiredDate = Order.RequiredDate;
+            //add order detail
+            foreach (var i in cart)
+            {
+                OrderDetail od = new OrderDetail();
+                od.ProductId = i.ProductDTO.ProductId;
+                od.UnitPrice = (decimal)i.ProductDTO.UnitPrice;
+                od.Quantity = (short)i.Quantity;
+                newOrder.OrderDetails.Add(od);
+            }
+            return newOrder;
         }
     }
 }
