@@ -130,7 +130,7 @@
                 }
                     <div class="name"><a href="~/product/detail">@p.ProductName</a></div>
                     <div class="price">@p.UnitPrice</div>
-                    <div><a asp-page="/account/cart" asp-page-handler="buynow" asp-route-proid="4">Buy now</a></div>
+                <div><a asp-page="/account/cart" asp-page-handler="buynow" asp-route-proid="@p.ProductId">Buy now</a></div>
                 </div>
         } 
         

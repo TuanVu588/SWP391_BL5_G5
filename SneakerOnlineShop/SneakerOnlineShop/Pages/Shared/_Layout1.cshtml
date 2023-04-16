@@ -95,14 +95,14 @@
                             accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(Context.Session.GetString("account"));
                         }
 
-                        var CartSession = Context.Session.GetString("Cart");
-                        var Cart = new List<Item>();
-                        if (CartSession != null)
-                        {
-                            Cart = JsonSerializer.Deserialize<List<Item>>(Context.Session.GetString("Cart"));
-                        }
+                        //var CartSession = Context.Session.GetString("Cart");
+                        //var Cart = new List<Item>();
+                        //if (CartSession != null)
+                        //{
+                        //    Cart = JsonSerializer.Deserialize<List<Item>>(Context.Session.GetString("Cart"));
+                        //}
                     }
-                    <li><a href="~/account/cart">Cart: @Cart.Count()</a></li>
+                    @*<li><a href="~/account/cart">Cart: @Cart.Count()</a></li>*@
                     @if (Context.Session.GetString("account") == null)
                     {
                         <li><a href="~/account/login">Login</a></li>
