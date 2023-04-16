@@ -4,11 +4,11 @@
 }
 
 @{
-    //MyRazorPages.Models.Account accSession = new MyRazorPages.Models.Account();
-    //if (HttpContext.Session.GetString("CustomerSession") != null)
-    //{
-    //    accSession = JsonSerializer.Deserialize<MyRazorPages.Models.Account>(HttpContext.Session.GetString("CustomerSession"));
-    //}
+    SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
+    if (HttpContext.Session.GetString("account") != null)
+    {
+        accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("account"));
+    }
 }
 @{
     //var CartSession = HttpContext.Session.GetString("Cart");
@@ -22,6 +22,7 @@
     <div id="cart-title">
         <h3>SHOPPING CART</h3>
     </div>
+@*    <form method="post">*@
     <div id="cart-content">
         <form method="post" asp-page="/account/cart" asp-page-handler="update">
             @foreach (var item in Model.cart)
@@ -57,7 +58,7 @@
             <div id="cart-summary">
                 <div class="cart-item-name">
                     <div class="cart-item-button">
-                        <input type="submit" value="Save Cart" style="color:seagreen; margin-left:20px" />
+                        <input type="submit" value="Save Quantity" style="color:seagreen; margin-left:20px" />
                     </div>
                 </div>
                 <div id="cart-summary-content">Total amount: <span style="color:red">@Model.Total $</span></div>
@@ -69,13 +70,13 @@
     <div class="msg-error" style="text-align:left">
         @ViewData["msg"]
     </div>
-    @*<form method="post">
+    <form method="post">
         <input type="hidden" asp-for="Customer.CustomerId" value="1" />
         <div id="customer-info">
             <div id="customer-info-content">
                 <h3>CUSTOMER INFORMATION:</h3>
                 <div id="customer-info-detail">
-                    @if (HttpContext.Session.GetString("CustomerSession") == null)
+                    @if (HttpContext.Session.GetString("account") == null)
                     {
                         <div id="customer-info-left">
                             <input type="text" asp-for="Customer.CompanyName" placeholder="Company name *" />
@@ -84,7 +85,10 @@
                             <span class="msg-error" asp-validation-for="Customer.ContactName"></span><br />
                             <input type="date" asp-for="Order.RequiredDate" id="RequiredDateForNonSession" />
                             <span class="msg-error" asp-validation-for="Order.RequiredDate"></span><br />
-                            <span id="msg-error-date2" style="color: red">@Model.ValidateRequiredDate</span>
+                            @if (@Model.ValidateRequiredDate != null)
+                            {
+                                <span id="msg-error-date2" style="color: red">@Model.ValidateRequiredDate</span>
+                            }
                         </div>
                         <div id="customer-info-right">
                             <input type="text" asp-for="Customer.ContactTitle" placeholder="Contact title *" />
@@ -93,15 +97,30 @@
                             <span class="msg-error" asp-validation-for="Customer.Address"></span><br />
                         </div>
                     }
-                    @if (HttpContext.Session.GetString("CustomerSession") != null)
+                    @if (HttpContext.Session.GetString("account") != null)
                     {
                         <div id="customer-info-left">
-
-                            <input type="date" asp-for="Order.RequiredDate" id="RequiredDateForSession" />
+                            <label asp-for="Order.ShipAddress"></label><br />
+                            <input asp-for="Order.ShipAddress" id="RequiredDateForSession" />
+                            <span class="msg-error" asp-validation-for="Order.ShipAddress"></span><br />
+                            <label asp-for="Order.ShipCity"></label><br />
+                            <input asp-for="Order.ShipCity" id="RequiredDateForSession" />
+                            <span class="msg-error" asp-validation-for="Order.ShipCity"></span><br />
+                            <label asp-for="Order.RequiredDate"></label><br />
+                            <input type="date" asp-for="Order.RequiredDate" />
                             <span class="msg-error" asp-validation-for="Order.RequiredDate"></span><br />
-                            <span id="msg-error-date2" style="color: red">@Model.ValidateRequiredDate</span>
+                            @if (@Model.ValidateRequiredDate != null)
+                            {
+                                <span id="msg-error-date2" style="color: red">@Model.ValidateRequiredDate</span>
+                            }
                         </div>
                         <div id="customer-info-right">
+                           @*List Customer information*@
+                            <input asp-for="Customer.CompanyName" placeholder="CompanyName *" disabled />
+                            <input asp-for="Customer.ContactName" placeholder="Contact name *" disabled />
+                            <input asp-for="Customer.ContactTitle" placeholder="Contact title *" disabled />
+                            <input asp-for="Customer.Address" placeholder="Address *" disabled />
+                           
                         </div>
                     }
                 </div>
@@ -125,6 +144,6 @@
         <div id="cart-order">
             <input type="button" value="ORDER" onclick="this.form.submit()" />
         </div>
-    </form>*@
+    </form>
 </div>
 

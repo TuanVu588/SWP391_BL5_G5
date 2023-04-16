@@ -60,8 +60,8 @@ namespace SneakerOnlineShop.Pages.Account
 
         public async Task<Models.Account> findByEmailAndPassword(String email, String password)
         {
-            var acc = await dBContext.Accounts.FirstOrDefaultAsync(
-                  a => a.Email.Equals(account.Email) && a.Password.Equals(account.Password));
+            var acc = await dBContext.Accounts.Where(
+                  a => a.Email.Equals(account.Email) && a.Password.Equals(account.Password)).SingleOrDefaultAsync();
             return acc;
         }
     }
