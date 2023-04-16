@@ -11,6 +11,7 @@ builder.Services.AddDbContext<SWP391_DBContext>(opt =>
 });
 //builder.Services.AddScoped<SWP391_DBContext>();
 builder.Services.AddSession(opt => opt.IdleTimeout = TimeSpan.FromMinutes(30));
+builder.Services.AddAutoMapper(typeof(SneakerOnlineShop.DTO.MapperProfile));
 
 var app = builder.Build();
 if (!app.Environment.IsDevelopment())

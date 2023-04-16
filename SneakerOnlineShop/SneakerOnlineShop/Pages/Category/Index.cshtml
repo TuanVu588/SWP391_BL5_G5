@@ -2,7 +2,8 @@
 @model SneakerOnlineShop.Pages.Category.IndexModel
 @{
     List<Category> categories = (List<Category>)ViewData["categories"];
-    List<Product> productPerPage = (List<Product>)ViewData["productPerPage"];
+    List<Int16?> listSize = (List<Int16?>)ViewData["listSize"];
+    //List<Product> productPerPage = (List<Product>)ViewData["productPerPage"];
 }
 <style>
     .btnSort {
@@ -25,34 +26,69 @@
     <ul>
         @foreach (var category in categories)
         {
-            <a href="~/category/index?id=@category.CategoryId&numPage=1">
+            <a href="~/category/index?cid=@category.CategoryId">
             <li>@category.CategoryName</li></a>
         }
     </ul>
 </div>
 <div id="content-right">
-    <div class="path">@productPerPage[0].Category.CategoryName</b></div>
-    <div>
-        <a href="~/category/index?id=@productPerPage[0].CategoryId&numPage=@ViewData["page"]&sortOrder=priceAsc">
-            <button class="btnSort">
-                Sort By Price(ASC)
-            </button>
-        </a>
-        <a href="~/category/index?id=@productPerPage[0].CategoryId&numPage=@ViewData["page"]&sortOrder=priceDesc">
+   
+    <div class="path">CategoryName</b></div>
+    <div style="display:flex;width:100%;">
+        <div style="display:flex;width:30%;">
+        <a asp-page="/category/index" asp-route-cid="@Model.cid" asp-route-PriceSort="price_desc" asp-route-SizeFilter="@Model.SizeFilter" asp-route-NameFilter="@Model.NameFilter" asp-route-ColorFilter="@Model.ColorFilter">
             <button class="btnSort">
                 Sort By Price(DESC)
             </button>
         </a>
+        <a asp-page="/category/index" asp-route-cid="@Model.cid" asp-route-PriceSort="price_asc" asp-route-SizeFilter="@Model.SizeFilter" asp-route-NameFilter="@Model.NameFilter" asp-route-ColorFilter="@Model.ColorFilter">
+            <button class="btnSort">
+                Sort By Price(ASC)
+            </button>
+        </a>
+    </div>
+        <div id="product-title-2" style="width: 40%;padding-top: 0px;padding-left: 190px;padding-bottom: 25px;">
+            <form asp-page="/category/index" method="get">
+            <label>Name:</label>
+            <input type="text" asp-for="NameFilter" /><br>
+            <label>Size:</label>
+            <select asp-for="SizeFilter">
+                <option value="">All sizes</option>
+                @foreach (var size in listSize)
+                {
+                    <option value="@size">@size</option>
+                }
+                   
+            </select>
+            <label>Color:</label>
+            <select asp-for="ColorFilter">
+                <option value="">All colors</option>
+                <option value="Red">Red</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+            </select>
+            @if (Model.PriceSort is not null)
+            {
+                <input asp-for="PriceSort" hidden>
+            }
+                <input asp-for="cid" hidden>
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </form>
+    </div>
     </div>
     <div class="content-main" style="flex-wrap: wrap">
 
-        @foreach (var product in productPerPage)
+        @foreach (var p in Model.Products)
         {
             <div class="product" style="width: 20%; margin-bottom:10px">
-                <a href="~/product/detail"><img src="~/img/nike-while.jpg" width="100%" /></a>
-                <div class="name"><a href="~/product/detail">@product.ProductName</a></div>
-                <div class="price">$@(System.Math.Round((decimal)product.UnitPrice))</div>
-                <div class="btnBuyNow"><a asp-page="/account/cart" asp-page-handler="buynow" asp-route-proid="@product.ProductId">Buy now</a></div>
+                @foreach (var i in p.ProductImages)
+                {
+                    <a href="~/product/detail"><img src="~/img/@i.ImagePath" width="100%" /></a>
+                    break;
+                }
+                <div class="name"><a href="~/product/detail">@p.ProductName</a></div>
+                <div class="price">@p.UnitPrice</div>
+                <div><a asp-page="/account/cart" asp-page-handler="buynow" asp-route-proid="4">Buy now</a></div>
             </div>
         }
 
