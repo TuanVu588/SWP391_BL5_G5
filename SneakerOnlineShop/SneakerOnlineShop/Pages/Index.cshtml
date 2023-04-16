@@ -1,21 +1,68 @@
 ﻿@page
-@model IndexModel
+@model SneakerOnlineShop.Pages.IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
-
-<div class="text-center" id="header">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-
 @{
-    List<Category> categories = (List<Category>)ViewData["catergories"];
-    List<Product> products = (List<Product>)ViewData["products"];
-    List<Product> productPerPage = (List<Product>)ViewData["productPerPage"];
-    List<ProductImage> ProductImages = (List < ProductImage >) ViewData["ProductImages"];
+    List<Category> categories = (List<Category>)ViewData["categories"];
+    List<Int16?> listSize = (List<Int16?>)ViewData["listSize"];
 }
+<style>
+    #productListAdmin {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
+        #productListAdmin td, #productListAdmin th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #productListAdmin tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #productListAdmin tr:hover {
+            background-color: #ddd;
+        }
+
+        #productListAdmin th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: gray;
+            color: white;
+        }
+
+    .btnSort {
+        min-width: 150px;
+        background-color: forestgreen;
+        color: #fff;
+        margin: 0 10px 10px 10px;
+        line-height: 40px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btnSort:hover {
+            background-color: limegreen;
+        }
+
+    #product-title-2 {
+        padding-top: 0px;
+    }
+
+    #product-title-1 {
+        display : inline-block;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+</style>
 <div id="content-left">
     <h3>CATEGORY</h3>
     <ul>
@@ -24,38 +71,68 @@
             <a href="~/category/index?id=@category.CategoryId&numPage=1">
             <li>@category.CategoryName</li></a>
         }
-
     </ul>
 </div>
 <div id="content-right" >
-    <div class="content-main" style="flex-wrap: wrap">
-        @if(products!=null || products.Count > 0)
-        {
-            @foreach (var p in productPerPage)
-            {
-                <div class="product" style="width: 20%; margin-bottom:10px">
-                    @foreach (var i in ProductImages){
-                        @if(i.ProductId.Equals(p.ProductId)){
-                            <a href="~/product/detail"><img src="~/img/@i.ImagePath" width="100%" /></a>
-                            break;
-                        }
+    <div id="product-title-header">
+        <div id="product-title-1" style="width: 17%;">
+            <a asp-page="./index" asp-route-PriceSort="price_desc" asp-route-SizeFilter="@Model.SizeFilter" asp-route-NameFilter="@Model.NameFilter" asp-route-ColorFilter="@Model.ColorFilter">
+            <button class="btnSort">
+                Sort By Price(DESC)
+            </button>
+            </a> 
+        </div>
+        <div id="product-title-1" style="width: 17%;">
+            <a asp-page="./index" asp-route-PriceSort="price_asc" asp-route-SizeFilter="@Model.SizeFilter" asp-route-NameFilter="@Model.NameFilter" asp-route-ColorFilter="@Model.ColorFilter">
+                <button class="btnSort">
+                    Sort By Price(ASC)
+                </button>
+            </a>
+        </div>
+
+        <div id="product-title-2" style="width: 50%; padding-left:190px">
+        <form asp-page="./Index" method="get">
+                <label>Name:</label>
+                <input type="text" asp-for="NameFilter" /><br>
+            <label>Size:</label>
+                <select asp-for="SizeFilter">
+                    <option value="">All sizes</option>
+                    @foreach (var size in listSize)
+                    {
+                        <option value="@size">@size</option>
                     }
-                    
+                
+            </select>
+            <label>Color:</label>
+                <select asp-for="ColorFilter">
+                <option value="">All colors</option>
+                <option value="Red">Red</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+            </select>
+                @if (Model.PriceSort is not null)
+                {
+                    <input asp-for="PriceSort" hidden>
+                }
+        <input type="submit" value="Search" class="btn btn-primary" />
+         </form>
+        </div>
+       
+    </div>
+    <div class="content-main" style="flex-wrap: wrap">
+        @foreach (var p in Model.Products)
+        {
+                <div class="product" style="width: 20%; margin-bottom:10px">
+                @foreach (var i in p.ProductImages)
+                {
+                    <a href="~/product/detail"><img src="~/img/@i.ImagePath" width="100%" /></a>
+                    break;
+                }
                     <div class="name"><a href="~/product/detail">@p.ProductName</a></div>
                     <div class="price">@p.UnitPrice</div>
-                    <div><a asp-page="/account/cart" asp-page-handler="buynow" asp-route-proid="4">Buy now</a></div>
-
+                <div><a asp-page="/account/cart" asp-page-handler="buynow" asp-route-proid="@p.ProductId">Buy now</a></div>
                 </div>
-            } 
-        }
+        } 
+        
     </div>
-    <div id="paging">
-        @for (int i = 1; i <= (int)ViewData["maxPage"]; i++)
-        {
-            <div class="pagination">
-                <a href="index?numPage=@i">@i</a>
-            </div>
-        }
-    </div>
-
 </div>
