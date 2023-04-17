@@ -1,0 +1,150 @@
+﻿@page
+@model SneakerOnlineShop.Pages.Account.ProfileEditModel
+@{
+}
+@{
+    SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
+    if (HttpContext.Session.GetString("account") != null)
+    {
+        accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("account"));
+    }
+
+}
+<style>
+    .content-main {
+        margin: 10px;
+        display: block;
+    }
+
+    .profile-content {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 250px;
+    }
+
+    .profile-content-col {
+        line-height: 25px;
+        padding: 15px;
+    }
+
+    .profile-item-title {
+        font-weight: bold;
+    }
+
+    .edit-btn {
+        margin-left: 15px;
+    }
+
+        .edit-btn input {
+            padding: 8px 10px;
+            background-color: burlywood;
+            cursor: pointer;
+            border: transparent;
+        }
+
+            .edit-btn input:hover {
+                background-color: sienna;
+                color: white;
+            }
+
+    .profile-content-item {
+        height: 100px;
+        display: block;
+    }
+
+        .profile-content-item label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .profile-content-item textarea {
+            display: block;
+            width: 300px;
+            resize: none;
+        }
+
+        .profile-content-item input {
+            display: block;
+            width: 300px;
+        }
+
+    .title {
+        line-height: 40px;
+        background-color: sienna;
+        color: white;
+        margin: 0px 100px 10px 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-left: 5px;
+    }
+</style>
+<div id="content-left">
+    <h3 style="font-weight: normal;">Welcome, @accSession.Email</h3>
+    <h3>Account Management</h3>
+    <ul>
+        <a href="~/account/profile?accId=@accSession.AccountId">
+        <li>Personal information</li></a>
+    </ul>
+    <h3>My order</h3>
+    <ul>
+        <a href="~/account/profile1?accId=@accSession.AccountId">
+        <li>All orders</li></a>
+        <a href="#">
+        <li>Canceled order</li></a>
+    </ul>
+</div>
+<div id="content-right">
+    <div class="title">Personal information</br></div>
+    <div class="content-main">
+        @if (accSession.RoleId == 1)
+        {
+            <div class="msg-error" style="text-align:left">
+                @ViewData["msg"]
+            </div>
+            <form method="post">
+                <input type="hidden" value="@accSession.AccountId" name="accId" />
+                <input type="hidden" asp-for="Customer.CustomerId" value="1" />
+                <div class="profile-content">
+                    <div class="profile-content-col">
+                        <div class="profile-content-item">
+                            <label>Company name<span style="color: red;">*</span></label>
+                            <textarea asp-for="Customer.CompanyName">@ViewData["CompanyName"]</textarea>
+                            <span class="msg-error" asp-validation-for="Customer.CompanyName"></span>
+                        </div>
+                        <div class="profile-content-item">
+                            <label>Contact name<span style="color: red;">*</span></label>
+                            <textarea asp-for="Customer.ContactName">@ViewData["ContactName"]</textarea>
+                            <span class="msg-error" asp-validation-for="Customer.ContactName"></span>
+                        </div>
+                    </div>
+                    <div class="profile-content-col">
+                        <div class="profile-content-item">
+                            <label>Contact title<span style="color: red;">*</span></label>
+                            <textarea asp-for="Customer.ContactTitle">@ViewData["CompanyTitle"]</textarea>
+                            <span class="msg-error" asp-validation-for="Customer.ContactTitle"></span>
+                        </div>
+                        <div class="profile-content-item">
+                            <label>Address<span style="color: red;">*</span></label>
+                            <textarea asp-for="Customer.Address">@ViewData["Address"]</textarea>
+                            <span class="msg-error" asp-validation-for="Customer.Address"></span>
+                        </div>
+                    </div>
+                    <div class="profile-content-col">
+                        <div class="profile-content-item">
+                            <label>Phone<span style="color: red;">*</span></label>
+                            <textarea asp-for="Customer.Phone">@ViewData["Phone"]</textarea>
+                            <span class="msg-error" asp-validation-for="Customer.Phone"></span>
+                            <span class="msg-error">@ViewData["errorPhone"]</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="edit-btn">
+                    <input type="submit" value="Edit" />
+                </div>
+
+            </form>
+        }
+    </div>
+</div>
