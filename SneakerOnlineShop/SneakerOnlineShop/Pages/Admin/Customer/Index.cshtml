@@ -1,12 +1,12 @@
 ﻿@page
-@model SneakerOnlineShop.Pages.Admin.Category.IndexModel
+@model SneakerOnlineShop.Pages.Admin.Customer.IndexModel
 @{
     SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
     if (HttpContext.Session.GetString("CustomerSession") != null)
     {
         accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("CustomerSession"));
     }
-    List<Category> categoryPerPage = (List<Category>)ViewData["productPerPage"];
+    List<Customer> customerPerPage = (List<Customer>)ViewData["customerPerPage"];
 }
 <style>
     #productListAdmin {
@@ -35,9 +35,10 @@
             background-color: gray;
             color: white;
         }
-        a{
-            text-decoration:none;
-        }
+
+    a {
+        text-decoration: none;
+    }
 </style>
 <div id="content-left">
     <h3>Admin</h3>
@@ -58,20 +59,19 @@
     </ul>
 </div>
 <div id="content-right">
-    <div class="path-admin">CATEGORY LIST</b></div>
+    <div class="path-admin">CUSTOMER LIST</b></div>
     <div class="content-main">
         <div id="content-main-dashboard">
-            <div id="product-title-header">
-                
+            <div id="product-title-header">                
                 <div id="product-title-2" style="width: 55%;">
                     <form method="get">
                         <input id="catIdForSearch" type="hidden" name="catId" />
-                        <input type="text" name="txtSearch" placeholder="Enter category name to search" />
+                        <input type="text" name="txtSearch" placeholder="Enter customer name to search" />
                         <input type="submit" value="Search" />
                     </form>
                 </div>
                 <div id="product-title-3" style="width: 20%;">
-                    <a href="~/admin/category/create">Create a new Category</a>
+                    <a href="~/admin/customer/create">Create a new Customer</a>
 
                 </div>
             </div>
@@ -80,18 +80,30 @@
             <div id="order-table-admin">
                 <table id="productListAdmin">
                     <tr>
-                        <th>Category ID</th>
-                        <th>Category Name</th>
-                        <th>Action</th>
+                            <th>Customer ID</th>
+                            <th>Customer Name</th>
+                            <th>Company Name</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Contact Name</th>
+                            <th>Contact Title</th>
+                            <th>Action</th>
+                            
                     </tr>
-                    @foreach (var categories in categoryPerPage)
+                    @foreach (var customer in customerPerPage)
                     {
+                        
                         <tr>
-                            <td><a href="~/admin/category/detail?id=@categories.CategoryId">#@categories.CategoryId</a></td>
-                            <td>@categories.CategoryName</td>
+                            <td><a href="~/admin/customer/detail?id=@customer.CustomerId">#@customer.CustomerId</a></td>
+                            <td>@customer.CustomerName</td>
+                            <td>@customer.CompanyName</td>
+                            <td>@customer.Phone</td>
+                            <td>@customer.Address</td>
+                            <td>@customer.ContactName</td>
+                            <td>@customer.ContactTitle</td>
                             <td>
-                                <a href="~/admin/category/update?id=@categories.CategoryId">Edit</a> &nbsp; | &nbsp;
-                                <a href="~/admin/category/delete?id=@categories.CategoryId">Delete</a>
+                                <a href="~/admin/customer/edit?id=@customer.CustomerId">Edit</a> &nbsp; | &nbsp;
+                                <a href="~/admin/customer/delete?id=@customer.CustomerId">Delete</a>
                             </td>
                         </tr>
                     }
@@ -101,7 +113,7 @@
                 @for (int i = 1; i <= (int)ViewData["maxPage"]; i++)
                 {
                     <div class="pagination">
-                        <a href="~/admin/category/index?numPage=@i&catId=@ViewData["catId"]&txtSearch=@ViewData["txtSearch"]">@i</a>
+                        <a href="~/admin/customer/index?numPage=@i&catId=@ViewData["catId"]&txtSearch=@ViewData["txtSearch"]">@i</a>
                     </div>
                 }
             </div>
@@ -109,10 +121,4 @@
     </div>
 
 </div>
-<script>
-    function catIdFunction() {
-        var catId = document.getElementById('selectCategory');
 
-        document.getElementById('catIdForSearch').value = catId.value;
-    }
-</script>
