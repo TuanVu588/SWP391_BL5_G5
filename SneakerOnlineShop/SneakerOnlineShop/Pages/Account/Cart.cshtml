@@ -1,0 +1,186 @@
+﻿@page
+@model SneakerOnlineShop.Pages.Account.CartModel
+@{
+}
+
+@{
+    SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
+    if (HttpContext.Session.GetString("account") != null)
+    {
+        accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("account"));
+    }
+}
+@{
+    //var CartSession = HttpContext.Session.GetString("Cart");
+    //var Cart = new List<Item>();
+    //if (CartSession != null)
+    //{
+    //    Cart = JsonSerializer.Deserialize<List<Item>>(HttpContext.Session.GetString("Cart"));
+    //}
+}
+<div id="cart">
+    <div id="cart-title">
+        <h3>SHOPPING CART</h3>
+    </div>
+    <div id="cart-content">
+        <form method="post" asp-page="/account/cart" asp-page-handler="update">
+
+            @if(Model.cart is not null)
+            {
+                @foreach (var item in Model.cart)
+                {
+                    <div class="cart-item">
+                        <div class="cart-item-infor">
+                            <div class="cart-item-img">
+                                <img src="~/img/@item.ProductDTO.PresentImage" />
+                            </div>
+                            <div class="cart-item-name">
+                                <a href="detail.html?id=1">@item.ProductDTO.ProductName</a>
+                            </div>
+                            <div class="cart-item-price">
+                                $@(System.Math.Round(item.Quantity * (decimal)item.ProductDTO.UnitPrice, 0))
+                            </div>
+                            <div class="cart-item-button">
+                                <a asp-page="/account/cart" asp-page-handler="delete" asp-route-proid="@item.ProductDTO.ProductId">Remove</a>
+                            </div>
+                        </div>
+                        <div class="cart-item-function">
+                            <label>Quantity</label>
+                            <input type="number" name="quantities" value="@item.Quantity" style="width: 50px;" min="1" />
+                        </div>
+                    </div>
+                }
+            <div id="cart-summary">
+                <div class="cart-item-name">
+                    <div class="cart-item-button">
+                        <input type="submit" value="Save Quantity" style="color:seagreen; margin-left:20px" />
+                    </div>
+                </div>
+                <div id="cart-summary-content">Total amount: <span style="color:red">@Model.Total $</span></div>
+            </div>
+            }
+        </form>
+    </div>
+    
+    <div class="msg-error" style="text-align:left">
+        @if (ViewData.ContainsKey("Success"))
+        {
+            <span id="msg-error-date2" style="color: red">@ViewData["Success"]</span>
+        }
+    </div>
+    <form method="post">
+        <div id="customer-info">
+            <div id="customer-info-content">
+                <h3>ORDER INFORMATION</h3>
+                <div id="customer-info-detail">
+                    @if (HttpContext.Session.GetString("account") == null)
+                    {
+                        <div id="customer-info-left">
+                            <input type="hidden" asp-for="Customer.CustomerId" value="-1" />
+                            <label asp-for="Customer.CompanyName"></label><br />
+                            <input type="text" asp-for="Customer.CompanyName" />
+                            <span class="msg-error" asp-validation-for="Customer.CompanyName"></span><br />
+                            <label asp-for="Customer.ContactName"></label><br />
+                            <input type="text" asp-for="Customer.ContactName" />
+                            <span class="msg-error" asp-validation-for="Customer.ContactName"></span><br />
+                            <label asp-for="Customer.ContactTitle"></label><br />
+                            <input type="text" asp-for="Customer.ContactTitle" />
+                            <span class="msg-error" asp-validation-for="Customer.ContactTitle"></span><br />
+                            <label asp-for="Customer.Address"></label><br />
+                            <input type="text" asp-for="Customer.Address" />
+                            <span class="msg-error" asp-validation-for="Customer.Address"></span><br />
+                            <label asp-for="Customer.Phone"></label><br />
+                            <input type="text" asp-for="Customer.Phone" />
+                            <span class="msg-error" asp-validation-for="Customer.Phone"></span><br />
+                            <label asp-for="Customer.CustomerName"></label><br />
+                            <input type="text" asp-for="Customer.CustomerName" />
+                            <span class="msg-error" asp-validation-for="Customer.CustomerName"></span><br />
+                        </div>
+                        <div id="customer-info-right">
+                            @*Order information*@
+                            <label asp-for="Order.ShipAddress"></label><br />
+                            <input asp-for="Order.ShipAddress"/>
+                            <span class="msg-error" asp-validation-for="Order.ShipAddress"></span><br />
+                            <label asp-for="Order.ShipCity"></label><br />
+                            <input asp-for="Order.ShipCity" />
+                            <span class="msg-error" asp-validation-for="Order.ShipCity"></span><br />
+                            <label asp-for="Order.RequiredDate"></label><br />
+                            <input asp-for="Order.RequiredDate" /><br />
+                            <span class="msg-error" asp-validation-for="Order.RequiredDate"></span><br />
+                            @if (ViewData.ContainsKey("Error"))
+                            {
+                                <span id="msg-error-date2" style="color: red">@ViewData["Error"]</span>
+                            }
+                        </div>
+                    }
+                    @if (accSession is not null && accSession.RoleId == 1)
+                    {
+                        <div id="customer-info-left">
+                            @*List Customer information*@
+                            <label asp-for="Order.ShipAddress"></label><br />
+                            <input asp-for="Order.ShipAddress" id="RequiredDateForSession" />
+                            <span class="msg-error" asp-validation-for="Order.ShipAddress"></span><br />
+                            <label asp-for="Order.ShipCity"></label><br />
+                            <input asp-for="Order.ShipCity" id="RequiredDateForSession" />
+                            <span class="msg-error" asp-validation-for="Order.ShipCity"></span><br />
+                            <label asp-for="Order.RequiredDate"></label><br />
+                            <input asp-for="Order.RequiredDate" /><br />
+                            <span class="msg-error" asp-validation-for="Order.RequiredDate"></span><br />
+                            @if (ViewData.ContainsKey("Error"))
+                            {
+                                <span id="msg-error-date2" style="color: red">@ViewData["Error"]</span>
+                            }
+                            @*
+                            <input type="hidden" asp-for="Customer.CustomerId"/>
+                            <label asp-for="Customer.CompanyName"></label><br />
+                            <input type="text" asp-for="Customer.CompanyName" />
+                            <span class="msg-error" asp-validation-for="Customer.CompanyName"></span><br />
+                            <label asp-for="Customer.ContactName"></label><br />
+                            <input type="text" asp-for="Customer.ContactName" />
+                            <span class="msg-error" asp-validation-for="Customer.ContactName"></span><br />
+                            <label asp-for="Customer.ContactTitle"></label><br />
+                            <input type="text" asp-for="Customer.ContactTitle" />
+                            <span class="msg-error" asp-validation-for="Customer.ContactTitle"></span><br />
+                            <label asp-for="Customer.Address"></label><br />
+                            <input type="text" asp-for="Customer.Address" />
+                            <span class="msg-error" asp-validation-for="Customer.Address"></span><br />
+                            <label asp-for="Customer.Phone"></label><br />
+                            <input type="text" asp-for="Customer.Phone" />
+                            <span class="msg-error" asp-validation-for="Customer.Phone"></span><br />*@
+          
+
+                        </div>
+                        <div id="customer-info-right">
+                            <input asp-for="Customer.CustomerId" type="hidden" />
+                            <input asp-for="Customer.CompanyName" type="hidden" />
+                            <input asp-for="Customer.ContactName" type="hidden" />
+                            <input asp-for="Customer.ContactTitle" type="hidden" />
+                            <input asp-for="Customer.Address" type="hidden" />
+                            <input asp-for="Customer.Phone" type="hidden" />
+                            <input asp-for="Customer.CustomerName" type="hidden" />
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div id="customer-info">
+            <div id="customer-info-content">
+                <h3>PAYMENT METHODS:</h3>
+                <div id="customer-info-payment">
+                    <div>
+                        <input type="radio" name="rbPaymentMethod" checked />
+                        Payment C.O.D - Payment on delivery
+                    </div>
+                    <div>
+                        <input type="radio" name="rbPaymentMethod" disabled />
+                        Payment via online payment gateway
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cart-order">
+            <input type="submit" value="ORDER" />
+        </div>
+    </form>
+</div>
+
