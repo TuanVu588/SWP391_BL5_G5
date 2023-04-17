@@ -10,14 +10,6 @@
         accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("account"));
     }
 }
-@{
-    //var CartSession = HttpContext.Session.GetString("Cart");
-    //var Cart = new List<Item>();
-    //if (CartSession != null)
-    //{
-    //    Cart = JsonSerializer.Deserialize<List<Item>>(HttpContext.Session.GetString("Cart"));
-    //}
-}
 <div id="cart">
     <div id="cart-title">
         <h3>SHOPPING CART</h3>

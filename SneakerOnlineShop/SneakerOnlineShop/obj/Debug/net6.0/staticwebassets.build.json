@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Hubci7MKeTBcOrsTucwD0sOYWsRwwR1ZZmyB5DU+Smo=",
+  "Hash": "I7TQxljGMEpn5NpaANK5o14cLOrpWZQD2TiK7sOAFT8=",
   "Source": "SneakerOnlineShop",
   "BasePath": "_content/SneakerOnlineShop",
   "Mode": "Default",
@@ -882,6 +882,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\back-admin.jpg"
+    },
+    {
+      "Identity": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\background-index.jpg",
+      "SourceId": "SneakerOnlineShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\",
+      "BasePath": "_content/SneakerOnlineShop",
+      "RelativePath": "img/background-index.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\background-index.jpg"
     },
     {
       "Identity": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\Jordan-1-panda.jpeg",
