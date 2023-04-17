@@ -1,0 +1,122 @@
+﻿@page
+@model SneakerOnlineShop.Pages.Admin.Category.IndexModel
+@{
+    SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
+    if (HttpContext.Session.GetString("CustomerSession") != null)
+    {
+        accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("CustomerSession"));
+    }
+    List<Category> categoryPerPage = (List<Category>)ViewData["productPerPage"];
+}
+<style>
+    #productListAdmin {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #productListAdmin td, #productListAdmin th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #productListAdmin tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #productListAdmin tr:hover {
+            background-color: #ddd;
+        }
+
+        #productListAdmin th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: gray;
+            color: white;
+        }
+        a{
+            text-decoration:none;
+        }
+</style>
+<div id="content-left">
+    <h3>Admin</h3>
+    <ul>
+
+        <a href="~/admin/order/index?empId=@accSession.EmployeeId">
+        <li>Orders</li>
+        </a>
+        <a href="~/admin/product/index">
+        <li>Products</li>
+        </a>
+        <a href="~/admin/category/index">
+        <li>Category</li>
+        </a>
+    </ul>
+</div>
+<div id="content-right">
+    <div class="path-admin">CATEGORY LIST</b></div>
+    <div class="content-main">
+        <div id="content-main-dashboard">
+            <div id="product-title-header">
+                <div id="product-title-1" style="width: 25%;">
+                    <b>Filter by Catetory:</b>
+                    <form method="get" onchange="catIdFunction()">
+                        <select name="catId" id="selectCategory">
+                            <option value="0">--- Select ---</option>
+                            @foreach (var category in (List<Category>)ViewData["categories"])
+                            {
+                                <option value="@category.CategoryId">@category.CategoryName</option>
+                            }
+                        </select>
+                        <input type="submit" value="Filter" />
+                    </form>
+                </div>
+                <div id="product-title-2" style="width: 55%;">
+                    <form method="get">
+                        <input id="catIdForSearch" type="hidden" name="catId" />
+                        <input type="text" name="txtSearch" placeholder="Enter product name to search" />
+                        <input type="submit" value="Search" />
+                    </form>
+                </div>
+                <div id="product-title-3" style="width: 20%;">
+                    <a href="~/admin/category/create">Create a new Category</a>
+
+                </div>
+            </div>
+            <br>
+            <br>
+            <div id="order-table-admin">
+                <table id="productListAdmin">
+                    @foreach (var categories in categoryPerPage)
+                    {
+                        <tr>
+                            <td><a href="~/admin/category/detail?id=@categories.CategoryId">#@categories.CategoryId</a></td>
+                            <td>@categories.CategoryName</td>
+                            <td>
+                                <a href="~/admin/category/update?id=@categories.CategoryId">Edit</a> &nbsp; | &nbsp;
+                                <a href="~/admin/category/delete?id=@categories.CategoryId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div id="paging">
+                @for (int i = 1; i <= (int)ViewData["maxPage"]; i++)
+                {
+                    <div class="pagination">
+                        <a href="~/admin/category/index?numPage=@i&catId=@ViewData["catId"]&txtSearch=@ViewData["txtSearch"]">@i</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    function catIdFunction() {
+        var catId = document.getElementById('selectCategory');
+
+        document.getElementById('catIdForSearch').value = catId.value;
+    }
+</script>
