@@ -33,7 +33,7 @@
                     <div class="profile-order-title">
                         <div class="profile-order-title-left">
                             <div>@o.OrderDate</div>
-                            <div>Order: <a href="#">#1</a></div>
+                            <div>Order: <a href="#">@o.OrderId</a></div>
                         </div>
                         @if (@o.Status.Equals("Pending"))
                         {
