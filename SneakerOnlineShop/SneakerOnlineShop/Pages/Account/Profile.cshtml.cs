@@ -39,6 +39,7 @@ namespace SneakerOnlineShop.Pages.Account
                 //ViewData["Address"] = cust.Address;
                 if(cust != null)
                 {
+                    Customer.CustomerName = cust.CustomerName;
                     Customer.CompanyName = cust.CompanyName;
                     Customer.ContactTitle = cust.ContactTitle;
                     Customer.ContactName = cust.ContactName;

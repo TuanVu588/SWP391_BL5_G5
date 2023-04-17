@@ -37,6 +37,7 @@ namespace SneakerOnlineShop.Pages.Account
             if (acc.RoleId == 1)
             {
                 var cust = await dBContext.Customers.Where(c => c.CustomerId.Equals(acc.CustomerId)).FirstOrDefaultAsync();
+                ViewData["CustomerName"] = cust.CustomerName;
                 ViewData["CompanyName"] = cust.CompanyName;
                 ViewData["CompanyTitle"] = cust.ContactTitle;
                 ViewData["ContactName"] = cust.ContactName;
@@ -72,8 +73,7 @@ namespace SneakerOnlineShop.Pages.Account
                     if (acc.RoleId == 1)
                     {
                         var cust = await dBContext.Customers.Where(c => c.CustomerId.Equals(acc.CustomerId)).FirstOrDefaultAsync();
-                        if (validatePhone(Customer.Phone))
-                        {
+                            cust.CustomerName = Customer.CustomerName;
                             cust.CompanyName = Customer.CompanyName;
                             cust.ContactName = Customer.ContactName;
                             cust.ContactTitle = Customer.ContactTitle;
@@ -91,7 +91,6 @@ namespace SneakerOnlineShop.Pages.Account
                             }
                         }
                         
-                    }
                 }
                 return Page();
             }
@@ -99,42 +98,6 @@ namespace SneakerOnlineShop.Pages.Account
             {
                 return Page();
             }
-        }
-
-        private bool validatePhone(string phone)
-        {
-            string error = "";
-
-            try
-            {
-                int phoneInt = int.Parse(phone.Trim());
-                int count = 0;
-                while (phoneInt > 0)
-                {
-                    //thực hiện chia number cho 10 và tăng count++
-                    phoneInt = phoneInt / 10;
-                    count++;
-                }
-                if (phoneInt < 0)
-                {
-                    error = "Phone is invalid";
-                    ViewData["errorPhone"] = error;
-                    return false;
-                }
-                else if (count != 10)
-                {
-                    error = "Phone number must consist of 10 digits";
-                    ViewData["errorPhone"] = error;
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                error = "Phone is invalid";
-                ViewData["errorPhone"] = error;
-                return false;
-            }
-            return true;
         }
     }
 }

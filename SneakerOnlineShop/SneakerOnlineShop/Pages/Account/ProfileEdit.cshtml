@@ -108,6 +108,11 @@
                 <div class="profile-content">
                     <div class="profile-content-col">
                         <div class="profile-content-item">
+                            <label>Customer name<span style="color: red;">*</span></label>
+                            <textarea asp-for="Customer.CustomerName">@ViewData["CustomerName"]</textarea>
+                            <span class="msg-error" asp-validation-for="Customer.CustomerName"></span>
+                        </div>
+                        <div class="profile-content-item">
                             <label>Company name<span style="color: red;">*</span></label>
                             <textarea asp-for="Customer.CompanyName">@ViewData["CompanyName"]</textarea>
                             <span class="msg-error" asp-validation-for="Customer.CompanyName"></span>
