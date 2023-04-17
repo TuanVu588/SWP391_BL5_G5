@@ -38,41 +38,67 @@
                     <tr>
                         <th>OrderID</th>
                         <th>OrderDate</th>
-                        <th>RequiredDate</th>
-                        <th>ShippedDate</th>
+                        <th>
+                            RequiredDate 
+                        </th>
+                        <th>ShippedDate
+                            @if (ViewData.ContainsKey("Error"))
+                            {<br />
+                                <span id="msg-error-date2" style="color: red">@ViewData["Error"]</span>
+                            }
+                        </th>
                         <th>Employee</th>
                         <th>Customer</th>
-                        <th>Freight($)</th>
                         <th>Status</th>
                     </tr>
+                    @foreach(var o in Model.orders)
+                    {
+                        <form method="post" asp-page="/admin/order/index" asp-page-handler="UpdateOrder">
+                        <tr>
+                            <td><a href="#">@o.OrderId</a>
+                                <input type="hidden" name="orderId" value="@o.OrderId">
+                             </td>
+                            <td>@o.OrderDate</td>
+                            <td>@o.RequiredDate</td>
+                            <td>
+                                    @if (@o.ShippedDate == null)
+                                    {
+                                    <input type="date" name="shipDate" required>
+                                    }else{
+                                        @o.ShippedDate
+                                    }
+                                   
+                            </td>
+                            <td>
+                                    @if (@o.Employee != null)
+                                    {
+                                        @o.Employee.FirstName
+                                    }else{
+                                    <input type="hidden" name="employeeId" value="@ViewData["eid"]">
+                                    }
+                             </td>
+                            <td>@o.Customer.CustomerName</td>
+                                @if (o.Status.Equals("Pending"))
+                                {
+                                <td style="color: red;">
+                                        <input type="submit" value="Accept"
+                                        style="
+                                        color:white; background-color:forestgreen;
+                                        margin-right:2%" />
+                                        |Pendding|
+                                    <a asp-page="/admin/order/index" asp-route-orderId="@o.OrderId" asp-route-employeeId="@ViewData["eid"]" asp-page-handler="Reject">Cancel</a>
+                                </td>
+                                }
+                                else
+                                {
+                                <td style="color: forestgreen;">
+                                    @o.Status
+                                </td>
+                                }
 
-                    <form>
-                    <tr>
-                        <td><a href="order-detail.html?id=5">#5</a></td>
-                        <td>12-10-2022</td>
-                        <td>14-10-2022</td>
-                        <td><input type="date"></td>
-                        <td>Tom</td>
-                        <td>David</td>
-                        <td>100</td>
-                        <td style="color: green;">
-                            <input type="submit" value="Accept" 
-                                style="border:1px solid forestgreen;
-                                        color:forestgreen; background-color:white;
-                                        margin-right:2%">  |Completed|  <a href="#">Cancel</a>
-                        </td>
-                    </tr>
-                    </form>
-                    <tr>
-                        <td><a href="#">#3</a></td>
-                        <td>11-10-2022</td>
-                        <td>12-10-2022</td>
-                        <td></td>
-                        <td>Tom</td>
-                        <td style="color: green;">Completed</td>
-                        <td style="color: red;">Order canceled</td>
-                        <td style="color: blue;">Pending | <a href="#">Cancel</a></td>
-                    </tr>
+                        </tr>
+                        </form>
+                    }
                 </table>
             </div>
            @* <div id="paging">
