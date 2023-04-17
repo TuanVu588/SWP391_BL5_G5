@@ -64,9 +64,11 @@
                     <input type="text" asp-for="Product.Color" value="@ViewData["Color"]" ><br/>
                     <label>Size:</label><br />
                     <input type="text" asp-for="Product.Size" value="@ViewData["Size"]"><br />
+                    <label>Description:</label><br />
+                    <input type="text" asp-for="Product.Description" value="@ViewData["Description"]"><br />
                     <label>Units on order:</label><br/>
                     <input type="text" asp-for="Product.UnitsOnOrder" value="@ViewData["UnitsOnOrder"]" id="" disabled><br/>
-                    @*<label>Discontinued:</label><br/>*@
+                    
                     @*<input type="checkbox" asp-for="Product.Discontinued" value="@ViewData["Discontinued"]" id=""><br/>*@
                     <input type="submit" value="Save"/>
                 </div>

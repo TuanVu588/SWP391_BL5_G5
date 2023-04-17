@@ -34,6 +34,7 @@ namespace SneakerOnlineShop.Pages.Admin.Product
             ViewData["CategoryId"] = product.CategoryId;
             ViewData["Color"] = product.Color;
             ViewData["Size"] = product.Size;
+            ViewData["Description"] = product.Description;
             /* ViewData["ReorderLevel"] = product.ReorderLevel;*/
             ViewData["UnitsOnOrder"] = product.UnitsOnOrder;
            /* ViewData["Discontinued"] = product.Discontinued;*/
@@ -55,7 +56,7 @@ namespace SneakerOnlineShop.Pages.Admin.Product
             product.CategoryId = Product.CategoryId;
             product.Size = Product.Size;
             product.Color = Product.Color;
-            /* product.ReorderLevel = Product.ReorderLevel;*/
+            product.Description =Product.Description;
             product.UnitsOnOrder = Product.UnitsOnOrder;
            /* product.Discontinued = Product.Discontinued;*/
 
