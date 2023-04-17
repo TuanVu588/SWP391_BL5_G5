@@ -52,6 +52,9 @@
         <a href="~/admin/category/index">
         <li>Category</li>
         </a>
+        <a href="~/admin/customer/index">
+        <li>Customers</li>
+        </a>
     </ul>
 </div>
 <div id="content-right">
@@ -59,23 +62,11 @@
     <div class="content-main">
         <div id="content-main-dashboard">
             <div id="product-title-header">
-                <div id="product-title-1" style="width: 25%;">
-                    <b>Filter by Catetory:</b>
-                    <form method="get" onchange="catIdFunction()">
-                        <select name="catId" id="selectCategory">
-                            <option value="0">--- Select ---</option>
-                            @foreach (var category in (List<Category>)ViewData["categories"])
-                            {
-                                <option value="@category.CategoryId">@category.CategoryName</option>
-                            }
-                        </select>
-                        <input type="submit" value="Filter" />
-                    </form>
-                </div>
+                
                 <div id="product-title-2" style="width: 55%;">
                     <form method="get">
                         <input id="catIdForSearch" type="hidden" name="catId" />
-                        <input type="text" name="txtSearch" placeholder="Enter product name to search" />
+                        <input type="text" name="txtSearch" placeholder="Enter category name to search" />
                         <input type="submit" value="Search" />
                     </form>
                 </div>
@@ -88,6 +79,11 @@
             <br>
             <div id="order-table-admin">
                 <table id="productListAdmin">
+                    <tr>
+                        <th>Category ID</th>
+                        <th>Category Name</th>
+                        <th>Action</th>
+                    </tr>
                     @foreach (var categories in categoryPerPage)
                     {
                         <tr>

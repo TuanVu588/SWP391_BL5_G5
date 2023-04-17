@@ -21,8 +21,7 @@ namespace SneakerOnlineShop.Pages.Admin.Category
             {
                 numPage = 1;
             }
-            var categories = await dBContext.Categories.ToListAsync();
-            ViewData["categories"] = categories;
+            
             var categoryPerPage = await dBContext.Categories.OrderByDescending(p => p.CategoryId).ToListAsync();
             var category = await dBContext.Categories.CountAsync();
             int totalCategories = category;

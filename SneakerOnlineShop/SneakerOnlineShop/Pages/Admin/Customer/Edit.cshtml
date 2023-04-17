@@ -1,11 +1,11 @@
 ﻿@page
-@model SneakerOnlineShop.Pages.Admin.Category.CreateModel
+@model SneakerOnlineShop.Pages.Admin.Customer.EditModel
 @{
     SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
     if (HttpContext.Session.GetString("CustomerSession") != null)
     {
         accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("CustomerSession"));
-    }   
+    }
 }
 <style>
     #productListAdmin {
@@ -60,18 +60,34 @@
 <div id="content-right">
     <div id="content-main">
 
-        <div class="path-admin">CREATE A NEW CATEGORY</b></div>
+        <div class="path-admin">Update Customer</b></div>
         <div class="msg-error" style="text-align:left">
             @ViewData["msg"]
         </div>
         <div class="content-main">
             <form id="content-main-product" method="post">
                 <div class="content-main-1">
-                    <label>Category name (*):</label><br />
-                    <input type="text" asp-for="Category.CategoryName" required><br />
-                    <span class="msg-error" asp-validation-for="Category.CategoryName"></span><br />
+                    <input type="hidden" asp-for="Customer.CustomerId" value="@ViewData["CustomerID"]" />
+                    <label>Company name (*):</label><br />
+                    <input type="text" asp-for="Customer.CompanyName" required value="@ViewData["CompanyName"]"><br />
+                    <span class="msg-error" asp-validation-for="Customer.CompanyName"></span><br />
+                    <label>Customer Name:</label><br />
+                    <input type="text" asp-for="Customer.CustomerName" value="@ViewData["CustomerName"]"/><br />
+                    <span class="msg-error" asp-validation-for="Customer.CustomerName"></span><br />
+                    <label>Phone:</label><br />
+                    <input type="text" asp-for="Customer.Phone" value="@ViewData["Phone"]"/><br />
+                    <span class="msg-error" asp-validation-for="Customer.Phone"></span><br />
+                    <label>Address:</label><br />
+                    <input type="text" asp-for="Customer.Address" value="@ViewData["Address"]"/><br />
+                    <span class="msg-error" asp-validation-for="Customer.Address"></span><br />
+                    <label>Contact Name:</label><br />
+                    <input type="text" asp-for="Customer.ContactName" value="@ViewData["ContactName"]"/><br />
+                    <span class="msg-error" asp-validation-for="Customer.ContactName"></span><br />
+                    <label>Contact Title:</label><br />
+                    <input type="text" asp-for="Customer.ContactTitle" value="@ViewData["ContactTitle"]"/><br />
+                    <span class="msg-error" asp-validation-for="Customer.ContactTitle"></span><br />
                     <input type="submit" value="Save" />
-                </div>               
+                </div>
             </form>
         </div>
 
