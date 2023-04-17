@@ -68,7 +68,7 @@
     <ul>
         @foreach (var category in categories)
         {
-            <a href="~/category/index?id=@category.CategoryId&numPage=1">
+            <a href="~/category/index?cid=@category.CategoryId">
             <li>@category.CategoryName</li></a>
         }
     </ul>

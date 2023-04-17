@@ -152,6 +152,8 @@ namespace SneakerOnlineShop.Models
 
                 entity.Property(e => e.ShippedDate).HasColumnType("datetime");
 
+                entity.Property(e => e.Status).HasMaxLength(15);
+
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CustomerId)

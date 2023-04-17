@@ -205,6 +205,10 @@
       "PackagePath": "staticwebassets\\img\\back-admin.jpg"
     },
     {
+      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\background-index.jpg",
+      "PackagePath": "staticwebassets\\img\\background-index.jpg"
+    },
+    {
       "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\logo-shoes.jpg",
       "PackagePath": "staticwebassets\\img\\logo-shoes.jpg"
     },

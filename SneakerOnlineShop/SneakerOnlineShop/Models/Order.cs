@@ -21,7 +21,6 @@ namespace SneakerOnlineShop.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         [Required(ErrorMessage = "RequiredDate is required")]
         public DateTime? RequiredDate { get; set; }
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime? ShippedDate { get; set; }
         public decimal? Freight { get; set; }
         [Required(ErrorMessage = "ShipAddress is required")]
@@ -29,6 +28,7 @@ namespace SneakerOnlineShop.Models
         [Required(ErrorMessage = "ShipCity is required")]
 
         public string? ShipCity { get; set; }
+        public string? Status { get; set; }
 
         public virtual Customer? Customer { get; set; }
         public virtual Employee? Employee { get; set; }
