@@ -30,11 +30,11 @@
             <input asp-for="Account.Email" /><br />
             <span class="msg-error" asp-validation-for="Account.Email"></span><br />
             <label>Password<span style="color: red;">*</span></label><br />
-            <input asp-for="Account.Password"/><br />
+            <input asp-for="Account.Password" id="password" type="password"/><br />
             <span class="msg-error" asp-validation-for="Account.Password"></span><br />
             <label>Re-Password<span style="color: red;">*</span></label><br />
-            <input type="password" /><br />
-            <span class="msg-error">Re-Password is required</span><br />
+            <input type="password" id="re-password"/><br />
+            @*<span class="msg-error">Re-Password is required</span><br />*@
             <div></div>
             <input type="submit" value="SIGN UP" style="margin-bottom: 30px;" />
         </form>
