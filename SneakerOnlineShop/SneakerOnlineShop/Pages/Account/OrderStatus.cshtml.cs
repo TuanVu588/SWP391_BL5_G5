@@ -25,7 +25,6 @@ namespace SneakerOnlineShop.Pages.Account
                 .Include(x => x.OrderDetails)
                 .ThenInclude(od => od.Product)
                 .ThenInclude(p => p.ProductImages).ToList();
-            //select list order with order details of the customer mang theo customer id theo get?
         }
     }
 }

@@ -1,0 +1,92 @@
+﻿@page
+@model SneakerOnlineShop.Pages.Admin.Order.IndexModel
+@{
+}
+<style>
+
+    #content-main-dashboard {
+        width: 91%;
+        border-left: 1px solid sandybrown;
+    }
+</style>
+<div id="content-left">
+    <ul>
+        <a href="dashboard.html">
+        <li>Dashboard</li></a>
+        <a href="order.html">
+        <li>Orders</li></a>
+        <a href="#">
+        <li>Products</li></a>
+        <a href="#">
+        <li>Customers</li></a>
+    </ul>
+</div>
+<div id="content-right">
+    <div class="path-admin">ORDERS LIST</b></div>
+    <div class="content-main">
+        <div id="content-main-dashboard">
+            <div id="order-title">
+                <b>Filter by Order date:</b>
+                <form>
+                    From: <input type="date" name="txtStartOrderDate" />
+                    To: <input type="date" name="txtEndOrderDate" />
+                    <input type="submit" value="Filter">
+                </form>
+            </div>
+            <div id="order-table">
+                <table id="orders" style="width:100%">
+                    <tr>
+                        <th>OrderID</th>
+                        <th>OrderDate</th>
+                        <th>RequiredDate</th>
+                        <th>ShippedDate</th>
+                        <th>Employee</th>
+                        <th>Customer</th>
+                        <th>Freight($)</th>
+                        <th>Status</th>
+                    </tr>
+
+                    <form>
+                    <tr>
+                        <td><a href="order-detail.html?id=5">#5</a></td>
+                        <td>12-10-2022</td>
+                        <td>14-10-2022</td>
+                        <td><input type="date"></td>
+                        <td>Tom</td>
+                        <td>David</td>
+                        <td>100</td>
+                        <td style="color: green;">
+                            <input type="submit" value="Accept" 
+                                style="border:1px solid forestgreen;
+                                        color:forestgreen; background-color:white;
+                                        margin-right:2%">  |Completed|  <a href="#">Cancel</a>
+                        </td>
+                    </tr>
+                    </form>
+                    <tr>
+                        <td><a href="#">#3</a></td>
+                        <td>11-10-2022</td>
+                        <td>12-10-2022</td>
+                        <td></td>
+                        <td>Tom</td>
+                        <td style="color: green;">Completed</td>
+                        <td style="color: red;">Order canceled</td>
+                        <td style="color: blue;">Pending | <a href="#">Cancel</a></td>
+                    </tr>
+                </table>
+            </div>
+           @* <div id="paging">
+                <div class="pagination">
+                    <a href="#">&laquo;</a>
+                    <a href="#">1</a>
+                    <a href="#" class="active">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>*@
+        </div>
+    </div>
+</div>

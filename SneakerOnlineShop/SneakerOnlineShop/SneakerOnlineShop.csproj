@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Admin\Order\" />
     <Folder Include="Pages\Category\" />
   </ItemGroup>
 
