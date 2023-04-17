@@ -66,7 +66,7 @@
                 <div class="content-main-1">
                     <input type="hidden" asp-for="Category.CategoryId" value="@ViewData["CategoryId"]" />
                     <label>Category name (*):</label><br />
-                    <input type="text" asp-for="Category.CategoryName" value="@ViewData["CategoryName"]"><br />
+                    <input type="text" asp-for="Category.CategoryName" value="@ViewData["CategoryName"]" required><br />
                     <span class="msg-error" asp-validation-for="Category.CategoryName"></span><br />
                     <input type="submit" value="Save" />
                 </div>
