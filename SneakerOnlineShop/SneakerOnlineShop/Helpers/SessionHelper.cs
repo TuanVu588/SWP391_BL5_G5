@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json.Linq;
 
 namespace SneakerOnlineShop.Helpers
 {
@@ -14,6 +15,10 @@ namespace SneakerOnlineShop.Helpers
         {
             var value = session.GetString(key);
             return value == null ? default(T) : JsonConvert.DeserializeObject<T>(value);
+        }
+        public static void removeSession(this ISession session, string key)
+        {
+            session.Remove(key);
         }
     }
 }

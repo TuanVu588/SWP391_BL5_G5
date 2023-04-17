@@ -24,29 +24,32 @@
     </div>
     <div id="cart-content">
         <form method="post" asp-page="/account/cart" asp-page-handler="update">
-            @foreach (var item in Model.cart)
-        {
-            <div class="cart-item">
-                <div class="cart-item-infor">
-                        <div class="cart-item-img">
-                            <img src="~/img/@item.ProductDTO.PresentImage" />
+
+            @if(Model.cart is not null)
+            {
+                @foreach (var item in Model.cart)
+                {
+                    <div class="cart-item">
+                        <div class="cart-item-infor">
+                            <div class="cart-item-img">
+                                <img src="~/img/@item.ProductDTO.PresentImage" />
+                            </div>
+                            <div class="cart-item-name">
+                                <a href="detail.html?id=1">@item.ProductDTO.ProductName</a>
+                            </div>
+                            <div class="cart-item-price">
+                                $@(System.Math.Round(item.Quantity * (decimal)item.ProductDTO.UnitPrice, 0))
+                            </div>
+                            <div class="cart-item-button">
+                                <a asp-page="/account/cart" asp-page-handler="delete" asp-route-proid="@item.ProductDTO.ProductId">Remove</a>
+                            </div>
+                        </div>
+                        <div class="cart-item-function">
+                            <label>Quantity</label>
+                            <input type="number" name="quantities" value="@item.Quantity" style="width: 50px;" min="1" />
+                        </div>
                     </div>
-                    <div class="cart-item-name">
-                        <a href="detail.html?id=1">@item.ProductDTO.ProductName</a>
-                    </div>
-                    <div class="cart-item-price">
-                            $@(System.Math.Round(item.Quantity * (decimal)item.ProductDTO.UnitPrice, 0))
-                    </div>
-                    <div class="cart-item-button">
-                            <a asp-page="/account/cart" asp-page-handler="delete" asp-route-proid="@item.ProductDTO.ProductId">Remove</a>
-                    </div>
-                </div>
-                <div class="cart-item-function">
-                    <label>Quantity</label>
-                        <input type="number" name="quantities" value="@item.Quantity" style="width: 50px;" min="1" />
-                </div>
-            </div>
-        }
+                }
             <div id="cart-summary">
                 <div class="cart-item-name">
                     <div class="cart-item-button">
@@ -55,15 +58,17 @@
                 </div>
                 <div id="cart-summary-content">Total amount: <span style="color:red">@Model.Total $</span></div>
             </div>
-
+            }
         </form>
     </div>
     
     <div class="msg-error" style="text-align:left">
-        @ViewData["msg"]
+        @if (ViewData.ContainsKey("Success"))
+        {
+            <span id="msg-error-date2" style="color: red">@ViewData["Success"]</span>
+        }
     </div>
     <form method="post">
-        
         <div id="customer-info">
             <div id="customer-info-content">
                 <h3>ORDER INFORMATION</h3>
@@ -87,6 +92,9 @@
                             <label asp-for="Customer.Phone"></label><br />
                             <input type="text" asp-for="Customer.Phone" />
                             <span class="msg-error" asp-validation-for="Customer.Phone"></span><br />
+                            <label asp-for="Customer.CustomerName"></label><br />
+                            <input type="text" asp-for="Customer.CustomerName" />
+                            <span class="msg-error" asp-validation-for="Customer.CustomerName"></span><br />
                         </div>
                         <div id="customer-info-right">
                             @*Order information*@
@@ -143,13 +151,13 @@
 
                         </div>
                         <div id="customer-info-right">
-                            <input type="hidden" asp-for="Customer.CustomerId" />
+                            <input asp-for="Customer.CustomerId" type="hidden" />
                             <input asp-for="Customer.CompanyName" type="hidden" />
                             <input asp-for="Customer.ContactName" type="hidden" />
                             <input asp-for="Customer.ContactTitle" type="hidden" />
                             <input asp-for="Customer.Address" type="hidden" />
                             <input asp-for="Customer.Phone" type="hidden" />
-                           
+                            <input asp-for="Customer.CustomerName" type="hidden" />
                         </div>
                     }
                 </div>

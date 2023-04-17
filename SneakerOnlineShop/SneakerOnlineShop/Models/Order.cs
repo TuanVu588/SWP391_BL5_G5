@@ -1,5 +1,4 @@
-﻿using SneakerOnlineShop.Validation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -27,7 +26,8 @@ namespace SneakerOnlineShop.Models
         public decimal? Freight { get; set; }
         [Required(ErrorMessage = "ShipAddress is required")]
         public string? ShipAddress { get; set; }
-        [Required(ErrorMessage = "ShipAddress is required")]
+        [Required(ErrorMessage = "ShipCity is required")]
+
         public string? ShipCity { get; set; }
 
         public virtual Customer? Customer { get; set; }

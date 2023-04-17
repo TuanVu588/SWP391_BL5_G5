@@ -25,6 +25,8 @@ namespace SneakerOnlineShop.Models
         [Required(ErrorMessage = "Phone is required")]
         [RegularExpression(@"^\d{3}-\d{3}-\d{4}$", ErrorMessage = "Please enter a valid phone number in the format xxx-xxx-xxxx")]
         public string? Phone { get; set; }
+        [Required(ErrorMessage = "CustomerName is required")]
+        public string? CustomerName { get; set; }
 
         public virtual ICollection<Account> Accounts { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
