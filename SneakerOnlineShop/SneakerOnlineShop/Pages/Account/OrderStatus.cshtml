@@ -9,11 +9,21 @@
         accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("account"));
     }
 }
+<style>
+    .filterOrderDate {
+        margin: 5px 0px 10px 10px;
+    }
+
+    .btnFilter {
+        padding: 2px 8px;
+        cursor: pointer;
+    }
+</style>
 <div id="content-left">
     <h3 style="font-weight: normal;">Welcome, @accSession.Email</h3>
     <h3>Account Management</h3>
     <ul>
-        <a href="profile.html">
+        <a href="~/account/profile?accId=@accSession.AccountId">
         <li>Personal information</li></a>
     </ul>
     <h3>My order</h3>
@@ -26,10 +36,19 @@
 </div>
 <div id="content-right">
     <div class="path">LIST ORDERS</b></div>
+    <div class="filterOrderDate">
+        <form method="get">
+            <input type="hidden" name="cusid" value="@accSession.CustomerId" />
+            From: <input type="date" name="fromDate" value="@ViewData["fromDate"]" />
+            To: <input type="date" name="toDate" value="@ViewData["toDate"]" />
+            <input class="btnFilter" type="submit" value="Filter" />
+        </form>
+    </div>
     <div class="content-main" style="width:100%">
         <div id="profile-content-order">
             <div>
-                @foreach(var o in Model.orders){
+                @foreach (var o in Model.orders)
+                {
                     <div class="profile-order-title">
                         <div class="profile-order-title-left">
                             <div>@o.OrderDate</div>
