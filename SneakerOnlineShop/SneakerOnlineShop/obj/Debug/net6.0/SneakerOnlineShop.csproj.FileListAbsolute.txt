@@ -140,3 +140,4 @@ F:\Semester 8\SWP391\SWPProject\SWP391_BL5_G5\SneakerOnlineShop\SneakerOnlineSho
 F:\Semester 8\SWP391\SWPProject\SWP391_BL5_G5\SneakerOnlineShop\SneakerOnlineShop\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\SWP_BL5\SWP391_BL5_G5\SneakerOnlineShop\SneakerOnlineShop\bin\Debug\net6.0\AutoMapper.dll
 E:\SWP_BL5\SWP391_BL5_G5\SneakerOnlineShop\SneakerOnlineShop\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+F:\Semester 8\SWP391\SWPProject\SWP391_BL5_G5\SneakerOnlineShop\SneakerOnlineShop\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
