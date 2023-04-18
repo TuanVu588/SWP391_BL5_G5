@@ -16,7 +16,7 @@ namespace SneakerOnlineShop.Pages.Account
         [BindProperty]
         public Order Order { get; set; }
 
-        public CartModel(SWP391_DBContext dBContext, IMapper mapper)
+        public ForgotPasswordModel(SWP391_DBContext dBContext, IMapper mapper)
         {
             this._dbContext = dBContext;
             _mapper = mapper;
