@@ -17,7 +17,7 @@ namespace SneakerOnlineShop.Pages.Account
             this._dbContext = dBContext;
             _mapper = mapper;
         }
-        public async Task OnGet(String cusid)// order cua cusnao
+        public async Task OnGet(String cusid, string fromDate, string toDate)// order cua cusnao
         {
             //lay order cua cusdo
             orders = _dbContext.Orders
@@ -26,6 +26,16 @@ namespace SneakerOnlineShop.Pages.Account
                 .ThenInclude(od => od.Product)
                 .ThenInclude(p => p.ProductImages).ToList();
             //select list order with order details of the customer mang theo customer id theo get?
+            if(fromDate != null && !fromDate.Equals("")) {
+                orders = orders.Where(o => o.OrderDate >= DateTime.Parse(fromDate)).ToList();
+            }
+            if (toDate != null && !toDate.Equals(""))
+            {
+                orders = orders.Where(o => o.OrderDate <= DateTime.Parse(toDate)).ToList();
+            }
+            ViewData["fromDate"] = fromDate;
+            ViewData["toDate"] = toDate;
+
         }
     }
 }
