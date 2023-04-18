@@ -1,463 +1,459 @@
 {
   "Files": [
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SneakerOnlineShop.bundle.scp.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SneakerOnlineShop.bundle.scp.css",
       "PackagePath": "staticwebassets\\SneakerOnlineShop.bundle.scp.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\css\\site.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\css\\style.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\favicon.ico",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\1.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\1.jpg",
       "PackagePath": "staticwebassets\\img\\1.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\10.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\10.jpg",
       "PackagePath": "staticwebassets\\img\\10.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\11.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\11.png",
       "PackagePath": "staticwebassets\\img\\11.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\12.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\12.jpg",
       "PackagePath": "staticwebassets\\img\\12.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\13.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\13.png",
       "PackagePath": "staticwebassets\\img\\13.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\14.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\14.jpg",
       "PackagePath": "staticwebassets\\img\\14.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\15.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\15.jpg",
       "PackagePath": "staticwebassets\\img\\15.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\16.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\16.jpg",
       "PackagePath": "staticwebassets\\img\\16.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\17.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\17.jpg",
       "PackagePath": "staticwebassets\\img\\17.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\18.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\18.jpg",
       "PackagePath": "staticwebassets\\img\\18.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\19.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\19.jpg",
       "PackagePath": "staticwebassets\\img\\19.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\2.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\2.jpg",
       "PackagePath": "staticwebassets\\img\\2.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\20.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\20.png",
       "PackagePath": "staticwebassets\\img\\20.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\21.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\21.jpg",
       "PackagePath": "staticwebassets\\img\\21.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\22.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\22.jpg",
       "PackagePath": "staticwebassets\\img\\22.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\23.jpeg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\23.jpeg",
       "PackagePath": "staticwebassets\\img\\23.jpeg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\24.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\24.jpg",
       "PackagePath": "staticwebassets\\img\\24.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\25.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\25.jpg",
       "PackagePath": "staticwebassets\\img\\25.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\26.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\26.jpg",
       "PackagePath": "staticwebassets\\img\\26.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\27.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\27.jpg",
       "PackagePath": "staticwebassets\\img\\27.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\28.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\28.jpg",
       "PackagePath": "staticwebassets\\img\\28.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\29.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\29.jpg",
       "PackagePath": "staticwebassets\\img\\29.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\3.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\3.png",
       "PackagePath": "staticwebassets\\img\\3.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\30.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\30.jpg",
       "PackagePath": "staticwebassets\\img\\30.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\31.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\31.jpg",
       "PackagePath": "staticwebassets\\img\\31.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\32.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\32.jpg",
       "PackagePath": "staticwebassets\\img\\32.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\33.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\33.jpg",
       "PackagePath": "staticwebassets\\img\\33.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\34.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\34.jpg",
       "PackagePath": "staticwebassets\\img\\34.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\35.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\35.jpg",
       "PackagePath": "staticwebassets\\img\\35.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\36.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\36.jpg",
       "PackagePath": "staticwebassets\\img\\36.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\37.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\37.jpg",
       "PackagePath": "staticwebassets\\img\\37.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\38.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\38.jpg",
       "PackagePath": "staticwebassets\\img\\38.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\39.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\39.png",
       "PackagePath": "staticwebassets\\img\\39.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\4.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\4.png",
       "PackagePath": "staticwebassets\\img\\4.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\40.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\40.png",
       "PackagePath": "staticwebassets\\img\\40.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\41.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\41.png",
       "PackagePath": "staticwebassets\\img\\41.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\42.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\42.jpg",
       "PackagePath": "staticwebassets\\img\\42.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\43.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\43.jpg",
       "PackagePath": "staticwebassets\\img\\43.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\44.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\44.png",
       "PackagePath": "staticwebassets\\img\\44.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\5.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\5.png",
       "PackagePath": "staticwebassets\\img\\5.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\6.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\6.png",
       "PackagePath": "staticwebassets\\img\\6.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\7.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\7.png",
       "PackagePath": "staticwebassets\\img\\7.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\8.jpeg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\8.jpeg",
       "PackagePath": "staticwebassets\\img\\8.jpeg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\9.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\9.png",
       "PackagePath": "staticwebassets\\img\\9.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\Air-Jordan-4-Retro.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\Air-Jordan-4-Retro.jpg",
       "PackagePath": "staticwebassets\\img\\Air-Jordan-4-Retro.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\Jordan-1-panda.jpeg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\Jordan-1-panda.jpeg",
       "PackagePath": "staticwebassets\\img\\Jordan-1-panda.jpeg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\back-admin.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\back-admin.jpg",
       "PackagePath": "staticwebassets\\img\\back-admin.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\background-index.jpg",
-      "PackagePath": "staticwebassets\\img\\background-index.jpg"
-    },
-    {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\logo-shoes.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\logo-shoes.jpg",
       "PackagePath": "staticwebassets\\img\\logo-shoes.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\logo1.png",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\logo1.png",
       "PackagePath": "staticwebassets\\img\\logo1.png"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\nike-while.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\nike-while.jpg",
       "PackagePath": "staticwebassets\\img\\nike-while.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\shoe-back.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\shoe-back.jpg",
       "PackagePath": "staticwebassets\\img\\shoe-back.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\sport-shoes-banner-for-website-with-button-ui-design-illustration-vector.jpg",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\img\\sport-shoes-banner-for-website-with-button-ui-design-illustration-vector.jpg",
       "PackagePath": "staticwebassets\\img\\sport-shoes-banner-for-website-with-button-ui-design-illustration-vector.jpg"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\js\\site.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "F:\\Semester 8\\SWP391\\SWPProject\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "E:\\SWP_BL5\\SWP391_BL5_G5\\SneakerOnlineShop\\SneakerOnlineShop\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
