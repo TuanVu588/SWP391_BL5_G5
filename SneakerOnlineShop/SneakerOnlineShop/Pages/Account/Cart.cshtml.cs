@@ -206,6 +206,7 @@ namespace SneakerOnlineShop.Pages.Account
             newOrder.ShipAddress = Order.ShipAddress;
             newOrder.ShipCity = Order.ShipCity;
             newOrder.RequiredDate = Order.RequiredDate;
+            newOrder.Status = "Pending";
             //add order detail
             foreach (var i in cart)
             {

@@ -2,9 +2,9 @@
 @model SneakerOnlineShop.Pages.Admin.Customer.IndexModel
 @{
     SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
-    if (HttpContext.Session.GetString("CustomerSession") != null)
+    if (HttpContext.Session.GetString("account") != null)
     {
-        accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("CustomerSession"));
+        accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("account"));
     }
     List<Customer> customerPerPage = (List<Customer>)ViewData["customerPerPage"];
 }
@@ -44,7 +44,7 @@
     <h3>Admin</h3>
     <ul>
 
-        <a href="~/admin/order/index?empId=@accSession.EmployeeId">
+        <a href="~/admin/order/index?eId=@accSession.EmployeeId">
         <li>Orders</li>
         </a>
         <a href="~/admin/product/index">
@@ -94,7 +94,7 @@
                     {
                         
                         <tr>
-                            <td><a href="~/admin/customer/detail?id=@customer.CustomerId">#@customer.CustomerId</a></td>
+                            <td>@customer.CustomerId</td>
                             <td>@customer.CustomerName</td>
                             <td>@customer.CompanyName</td>
                             <td>@customer.Phone</td>

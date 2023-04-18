@@ -2,9 +2,9 @@
 @model SneakerOnlineShop.Pages.Admin.Category.CreateModel
 @{
     SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
-    if (HttpContext.Session.GetString("CustomerSession") != null)
+    if (HttpContext.Session.GetString("account") != null)
     {
-        accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("CustomerSession"));
+        accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("account"));
     }   
 }
 <style>
@@ -43,7 +43,7 @@
     <h3>Admin</h3>
     <ul>
 
-        <a href="~/admin/order/index?empId=@accSession.EmployeeId">
+        <a href="~/admin/order/index?eId=@accSession.EmployeeId">
         <li>Orders</li>
         </a>
         <a href="~/admin/product/index">
