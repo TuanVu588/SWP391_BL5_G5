@@ -103,6 +103,8 @@ namespace SneakerOnlineShop.Models
 
                 entity.Property(e => e.ContactTitle).HasMaxLength(300);
 
+                entity.Property(e => e.CustomerName).HasMaxLength(300);
+
                 entity.Property(e => e.Phone)
                     .HasMaxLength(20)
                     .IsUnicode(false);
@@ -149,6 +151,8 @@ namespace SneakerOnlineShop.Models
                 entity.Property(e => e.ShipCity).HasMaxLength(15);
 
                 entity.Property(e => e.ShippedDate).HasColumnType("datetime");
+
+                entity.Property(e => e.Status).HasMaxLength(15);
 
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Orders)
@@ -215,9 +219,7 @@ namespace SneakerOnlineShop.Models
 
                 entity.ToTable("ProductImage");
 
-                entity.Property(e => e.ImageId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ImageID");
+                entity.Property(e => e.ImageId).HasColumnName("ImageID");
 
                 entity.Property(e => e.ImagePath).HasMaxLength(1000);
 

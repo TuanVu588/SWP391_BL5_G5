@@ -1,0 +1,124 @@
+﻿@page
+@model SneakerOnlineShop.Pages.Admin.Customer.IndexModel
+@{
+    SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
+    if (HttpContext.Session.GetString("CustomerSession") != null)
+    {
+        accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("CustomerSession"));
+    }
+    List<Customer> customerPerPage = (List<Customer>)ViewData["customerPerPage"];
+}
+<style>
+    #productListAdmin {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #productListAdmin td, #productListAdmin th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #productListAdmin tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #productListAdmin tr:hover {
+            background-color: #ddd;
+        }
+
+        #productListAdmin th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: gray;
+            color: white;
+        }
+
+    a {
+        text-decoration: none;
+    }
+</style>
+<div id="content-left">
+    <h3>Admin</h3>
+    <ul>
+
+        <a href="~/admin/order/index?empId=@accSession.EmployeeId">
+        <li>Orders</li>
+        </a>
+        <a href="~/admin/product/index">
+        <li>Products</li>
+        </a>
+        <a href="~/admin/category/index">
+        <li>Category</li>
+        </a>
+        <a href="~/admin/customer/index">
+        <li>Customers</li>
+        </a>
+    </ul>
+</div>
+<div id="content-right">
+    <div class="path-admin">CUSTOMER LIST</b></div>
+    <div class="content-main">
+        <div id="content-main-dashboard">
+            <div id="product-title-header">                
+                <div id="product-title-2" style="width: 55%;">
+                    <form method="get">
+                        <input id="catIdForSearch" type="hidden" name="catId" />
+                        <input type="text" name="txtSearch" placeholder="Enter customer name to search" />
+                        <input type="submit" value="Search" />
+                    </form>
+                </div>
+                <div id="product-title-3" style="width: 20%;">
+                    <a href="~/admin/customer/create">Create a new Customer</a>
+
+                </div>
+            </div>
+            <br>
+            <br>
+            <div id="order-table-admin">
+                <table id="productListAdmin">
+                    <tr>
+                            <th>Customer ID</th>
+                            <th>Customer Name</th>
+                            <th>Company Name</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Contact Name</th>
+                            <th>Contact Title</th>
+                            <th>Action</th>
+                            
+                    </tr>
+                    @foreach (var customer in customerPerPage)
+                    {
+                        
+                        <tr>
+                            <td><a href="~/admin/customer/detail?id=@customer.CustomerId">#@customer.CustomerId</a></td>
+                            <td>@customer.CustomerName</td>
+                            <td>@customer.CompanyName</td>
+                            <td>@customer.Phone</td>
+                            <td>@customer.Address</td>
+                            <td>@customer.ContactName</td>
+                            <td>@customer.ContactTitle</td>
+                            <td>
+                                <a href="~/admin/customer/edit?id=@customer.CustomerId">Edit</a> &nbsp; | &nbsp;
+                                <a href="~/admin/customer/delete?id=@customer.CustomerId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div id="paging">
+                @for (int i = 1; i <= (int)ViewData["maxPage"]; i++)
+                {
+                    <div class="pagination">
+                        <a href="~/admin/customer/index?numPage=@i&catId=@ViewData["catId"]&txtSearch=@ViewData["txtSearch"]">@i</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,118 @@
+﻿@page
+@model SneakerOnlineShop.Pages.Admin.Order.IndexModel
+@{
+}
+<style>
+
+    #content-main-dashboard {
+        width: 91%;
+        border-left: 1px solid sandybrown;
+    }
+</style>
+<div id="content-left">
+    <ul>
+        <a href="dashboard.html">
+        <li>Dashboard</li></a>
+        <a href="order.html">
+        <li>Orders</li></a>
+        <a href="#">
+        <li>Products</li></a>
+        <a href="#">
+        <li>Customers</li></a>
+    </ul>
+</div>
+<div id="content-right">
+    <div class="path-admin">ORDERS LIST</b></div>
+    <div class="content-main">
+        <div id="content-main-dashboard">
+            <div id="order-title">
+                <b>Filter by Order date:</b>
+                <form>
+                    From: <input type="date" name="txtStartOrderDate" />
+                    To: <input type="date" name="txtEndOrderDate" />
+                    <input type="submit" value="Filter">
+                </form>
+            </div>
+            <div id="order-table">
+                <table id="orders" style="width:100%">
+                    <tr>
+                        <th>OrderID</th>
+                        <th>OrderDate</th>
+                        <th>
+                            RequiredDate 
+                        </th>
+                        <th>ShippedDate
+                            @if (ViewData.ContainsKey("Error"))
+                            {<br />
+                                <span id="msg-error-date2" style="color: red">@ViewData["Error"]</span>
+                            }
+                        </th>
+                        <th>Employee</th>
+                        <th>Customer</th>
+                        <th>Status</th>
+                    </tr>
+                    @foreach(var o in Model.orders)
+                    {
+                        <form method="post" asp-page="/admin/order/index" asp-page-handler="UpdateOrder">
+                        <tr>
+                            <td><a href="#">@o.OrderId</a>
+                                <input type="hidden" name="orderId" value="@o.OrderId">
+                             </td>
+                            <td>@o.OrderDate</td>
+                            <td>@o.RequiredDate</td>
+                            <td>
+                                    @if (@o.ShippedDate == null)
+                                    {
+                                    <input type="date" name="shipDate" required>
+                                    }else{
+                                        @o.ShippedDate
+                                    }
+                                   
+                            </td>
+                            <td>
+                                    @if (@o.Employee != null)
+                                    {
+                                        @o.Employee.FirstName
+                                    }else{
+                                    <input type="hidden" name="employeeId" value="@ViewData["eid"]">
+                                    }
+                             </td>
+                            <td>@o.Customer.CustomerName</td>
+                                @if (o.Status.Equals("Pending"))
+                                {
+                                <td style="color: red;">
+                                        <input type="submit" value="Accept"
+                                        style="
+                                        color:white; background-color:forestgreen;
+                                        margin-right:2%" />
+                                        |Pendding|
+                                    <a asp-page="/admin/order/index" asp-route-orderId="@o.OrderId" asp-route-employeeId="@ViewData["eid"]" asp-page-handler="Reject">Cancel</a>
+                                </td>
+                                }
+                                else
+                                {
+                                <td style="color: forestgreen;">
+                                    @o.Status
+                                </td>
+                                }
+
+                        </tr>
+                        </form>
+                    }
+                </table>
+            </div>
+           @* <div id="paging">
+                <div class="pagination">
+                    <a href="#">&laquo;</a>
+                    <a href="#">1</a>
+                    <a href="#" class="active">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>*@
+        </div>
+    </div>
+</div>

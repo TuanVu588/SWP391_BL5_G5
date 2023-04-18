@@ -1,7 +1,6 @@
 ﻿@page
-@model SneakerOnlineShop.Pages.IndexModel
+@model SneakerOnlineShop.Pages.Employee.ViewProductModel
 @{
-    ViewData["Title"] = "Home page";
 }
 @{
     List<Category> categories = (List<Category>)ViewData["categories"];
@@ -46,7 +45,7 @@
         cursor: pointer;
     }
 
-    .btnSort:hover {
+        .btnSort:hover {
             background-color: limegreen;
         }
 
@@ -55,7 +54,7 @@
     }
 
     #product-title-1 {
-        display : inline-block;
+        display: inline-block;
     }
 
     .dropdown {
@@ -73,14 +72,14 @@
         }
     </ul>
 </div>
-<div id="content-right" >
+<div id="content-right">
     <div id="product-title-header">
         <div id="product-title-1" style="width: 17%;">
             <a asp-page="./index" asp-route-PriceSort="price_desc" asp-route-SizeFilter="@Model.SizeFilter" asp-route-NameFilter="@Model.NameFilter" asp-route-ColorFilter="@Model.ColorFilter">
-            <button class="btnSort">
-                Sort By Price(DESC)
-            </button>
-            </a> 
+                <button class="btnSort">
+                    Sort By Price(DESC)
+                </button>
+            </a>
         </div>
         <div id="product-title-1" style="width: 17%;">
             <a asp-page="./index" asp-route-PriceSort="price_asc" asp-route-SizeFilter="@Model.SizeFilter" asp-route-NameFilter="@Model.NameFilter" asp-route-ColorFilter="@Model.ColorFilter">
@@ -91,48 +90,48 @@
         </div>
 
         <div id="product-title-2" style="width: 50%; padding-left:190px">
-        <form asp-page="./Index" method="get">
+            <form asp-page="./Index" method="get">
                 <label>Name:</label>
                 <input type="text" asp-for="NameFilter" /><br>
-            <label>Size:</label>
+                <label>Size:</label>
                 <select asp-for="SizeFilter">
                     <option value="">All sizes</option>
                     @foreach (var size in listSize)
                     {
                         <option value="@size">@size</option>
                     }
-                
-            </select>
-            <label>Color:</label>
+
+                </select>
+                <label>Color:</label>
                 <select asp-for="ColorFilter">
-                <option value="">All colors</option>
-                <option value="Red">Red</option>
-                <option value="Blue">Blue</option>
-                <option value="Green">Green</option>
-            </select>
+                    <option value="">All colors</option>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Green">Green</option>
+                </select>
                 @if (Model.PriceSort is not null)
                 {
                     <input asp-for="PriceSort" hidden>
                 }
-        <input type="submit" value="Search" class="btn btn-primary" />
-         </form>
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </form>
         </div>
-       
+
     </div>
     <div class="content-main" style="flex-wrap: wrap">
         @foreach (var p in Model.Products)
         {
-                <div class="product" style="width: 20%; margin-bottom:10px">
+            <div class="product" style="width: 20%; margin-bottom:10px">
                 @foreach (var i in p.ProductImages)
                 {
                     <a href="~/product/detail"><img src="~/img/@i.ImagePath" width="100%" /></a>
                     break;
                 }
-                    <div class="name"><a href="~/product/detail">@p.ProductName</a></div>
-                    <div class="price">@p.UnitPrice</div>
-                <div><a asp-page="/account/cart" asp-page-handler="buynow" asp-route-proid="@p.ProductId">Buy now</a></div>
-                </div>
-        } 
-        
+                <div class="name"><a href="~/product/detail">@p.ProductName</a></div>
+                <div class="price">@p.UnitPrice</div>
+                <div class="price">@p.QuantityPerUnit</div>
+            </div>
+        }
+
     </div>
 </div>

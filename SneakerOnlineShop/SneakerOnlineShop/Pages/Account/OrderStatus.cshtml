@@ -1,0 +1,75 @@
+﻿@page
+@model SneakerOnlineShop.Pages.Account.OrderStatusModel
+@{
+}
+@{
+    SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
+    if (HttpContext.Session.GetString("account") != null)
+    {
+        accSession = JsonSerializer.Deserialize<SneakerOnlineShop.Models.Account>(HttpContext.Session.GetString("account"));
+    }
+}
+<div id="content-left">
+    <h3 style="font-weight: normal;">Welcome, @accSession.Email</h3>
+    <h3>Account Management</h3>
+    <ul>
+        <a href="profile.html">
+        <li>Personal information</li></a>
+    </ul>
+    <h3>My order</h3>
+    <ul>
+        <a href="/account/orderstatus?cusid=@accSession.CustomerId">
+        <li>All orders</li></a>
+        @*<a href="#">
+        <li>Canceled order</li></a>*@
+    </ul>
+</div>
+<div id="content-right">
+    <div class="path">LIST ORDERS</b></div>
+    <div class="content-main" style="width:100%">
+        <div id="profile-content-order">
+            <div>
+                @foreach(var o in Model.orders){
+                    <div class="profile-order-title">
+                        <div class="profile-order-title-left">
+                            <div>@o.OrderDate</div>
+                            <div>Order: <a href="#">@o.OrderId</a></div>
+                        </div>
+                        @if (@o.Status.Equals("Pending"))
+                        {
+                            <div class="profile-order-title-right">
+                                <span>Pending</span>
+                            </div>
+                        }
+                        else if (@o.Status.Equals("Reject"))
+                        {
+                            <div class="profile-order-title-right">
+                                <span>Reject</span>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="profile-order-title-right">
+                                <span style="color: blue;">Completed</span>
+                            </div>
+                        }
+                    </div>
+                    @foreach (var od in o.OrderDetails)
+                    {
+                        <div class="profile-order-content">
+                            @if (@od.Product.ProductImages.FirstOrDefault() is not null)
+                            {
+                                <div class="profile-order-content-col1">
+                                    <a href="detail.html"><img src="~/img/@od.Product.ProductImages.FirstOrDefault().ImagePath" width="100%" /></a>
+                                </div>
+                            }
+                            <div class="profile-order-content-col2">@od.Product.ProductName</div>
+                            <div class="profile-order-content-col3">@od.Quantity</div>
+                            <div class="profile-order-content-col4"> $@(System.Math.Round(od.Quantity * (decimal)od.Product.UnitPrice, 0))</div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
