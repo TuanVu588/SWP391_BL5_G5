@@ -13,7 +13,10 @@ namespace SneakerOnlineShop.Pages.Admin.Order
     {
         private readonly SWP391_DBContext _dbContext;
         IMapper _mapper;
-        public List<SneakerOnlineShop.Models.Order> orders{ get; set; }
+
+        [BindProperty]
+        public bool IsFiltering { get; set; }
+        public List<SneakerOnlineShop.Models.Order> orders { get; set; }
         public SneakerOnlineShop.Models.Employee employee { get; set; }
         public SneakerOnlineShop.Models.Order order { get; set; }
         public IndexModel(SWP391_DBContext dBContext, IMapper mapper)
@@ -21,9 +24,18 @@ namespace SneakerOnlineShop.Pages.Admin.Order
             this._dbContext = dBContext;
             _mapper = mapper;
         }
-        public async Task<IActionResult> OnGet(int eid)
+
+        public async Task<IActionResult> OnGet(int eid, string fromDate, string toDate)
         {
-            getAllOrder(eid);
+            if (string.IsNullOrEmpty(fromDate) && string.IsNullOrEmpty(toDate))
+            {
+                getAllOrder(eid);
+
+            }
+            else
+            {
+                OnGetFilterOrder(fromDate, toDate);
+            }
             return Page();
         }
 
@@ -51,7 +63,8 @@ namespace SneakerOnlineShop.Pages.Admin.Order
                 ViewData["Error"] = "RequireDate must be greatter than today";
                 return Page();
             }
-            if (order != null) {
+            if (order != null)
+            {
                 order.ShippedDate = shippedDate;
                 order.EmployeeId = eid;
                 order.Status = "Complete";
@@ -75,5 +88,25 @@ namespace SneakerOnlineShop.Pages.Admin.Order
             }
             return Page();
         }
+        public async void OnGetFilterOrder(string fromDate, string toDate)
+        {
+            orders = _dbContext.Orders.Include(o => o.Employee)
+                    .Include(o => o.Customer).Include(x => x.OrderDetails)
+                .ThenInclude(od => od.Product)
+                .ThenInclude(p => p.ProductImages).ToList();
+
+            if (fromDate != null && !fromDate.Equals(""))
+            {
+                orders = orders.Where(o => o.OrderDate >= DateTime.Parse(fromDate)).ToList();
+            }
+            if (toDate != null && !toDate.Equals(""))
+            {
+                orders = orders.Where(o => o.OrderDate <= DateTime.Parse(toDate)).ToList();
+            }
+            ViewData["fromDate"] = fromDate;
+            ViewData["toDate"] = toDate;
+            //return Page();
+        }
+
     }
 }

@@ -37,10 +37,10 @@
         <div id="content-main-dashboard">
             <div id="order-title">
                 <b>Filter by Order date:</b>
-                <form>
-                    From: <input type="date" name="txtStartOrderDate" />
-                    To: <input type="date" name="txtEndOrderDate" />
-                    <input type="submit" value="Filter">
+                <form method="get" asp-page-handler="FilterOrder">
+                    From: <input type="date" name="fromDate" value="@ViewData["fromDate"]" />
+                    To: <input type="date" name="toDate" value="@ViewData["toDate"]" />
+                    <button asp-page="~/admin/order/index?" type="submit" value="Filter" asp-page-handler="FilterOrder">Filter</button>
                 </form>
             </div>
             <div id="order-table">
