@@ -68,6 +68,7 @@ namespace SneakerOnlineShop.Pages.Account
                     cus.Address = Customer.Address;
                     cus.Phone = Customer.Phone;
                     cus.CustomerName = Customer.CustomerName;
+                    cus.Status = 1;
                     //save customer with order with order details
                     cus.Orders.Add(addOrderForCustomer(cus));
                     _dbContext.Customers.Add(cus);

@@ -27,14 +27,7 @@ namespace SneakerOnlineShop.Pages.Admin.Order
             return Page();
         }
 
-        private void getAllOrder(int eid)
-        {
-            ViewData["eid"] = eid;
-            orders = (List<SneakerOnlineShop.Models.Order>)_dbContext.Orders
-                    .Include(o => o.Employee)
-                    .Include(o => o.Customer).ToList();
-        }
-
+   
         // order status: complete
         public async Task<IActionResult> OnPostUpdateOrder(String shipDate, String orderId, String employeeId)
         {
@@ -48,7 +41,7 @@ namespace SneakerOnlineShop.Pages.Admin.Order
             if (DateTime.Compare(DateTime.Now, shippedDate) > 0
                 || DateTime.Compare(shippedDate, (DateTime)order.RequiredDate) > 0)
             {
-                ViewData["Error"] = "RequireDate must be greatter than today";
+                ViewData["Error"] = "ShipDate must be greatter than today and lower than required date";
                 return Page();
             }
             if (order != null) {
@@ -75,5 +68,13 @@ namespace SneakerOnlineShop.Pages.Admin.Order
             }
             return Page();
         }
+        private void getAllOrder(int eid)
+        {
+            ViewData["eid"] = eid;
+            orders = (List<SneakerOnlineShop.Models.Order>)_dbContext.Orders
+                    .Include(o => o.Employee)
+                    .Include(o => o.Customer).ToList();
+        }
+
     }
 }

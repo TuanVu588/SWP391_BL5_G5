@@ -27,7 +27,7 @@ namespace SneakerOnlineShop.Models
         public string? Phone { get; set; }
         [Required(ErrorMessage = "CustomerName is required")]
         public string? CustomerName { get; set; }
-
+        public int? Status { get; set; }
         public virtual ICollection<Account> Accounts { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }
