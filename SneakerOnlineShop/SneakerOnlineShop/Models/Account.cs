@@ -11,6 +11,7 @@ namespace SneakerOnlineShop.Models
         public string? CustomerId { get; set; }
         public int? EmployeeId { get; set; }
         public int? RoleId { get; set; }
+        public DateTime? CreateDate { get; set; }
 
         public virtual Customer? Customer { get; set; }
         public virtual Employee? Employee { get; set; }
