@@ -15,7 +15,7 @@ namespace SneakerOnlineShop.Pages.Admin
         public int TotalOrders { get; set; }
         public int TotalCustomers { get; set; }
         public int TotalGuests { get; set; }
-        public int TotalCustomerAndGuestInMonth { get; set; }
+        public int TotalGuestInMonth { get; set; }
         public int TotalCustomerInMonth { get; set; }
         public long jan { get; set; }
         public long feb { get; set; }
@@ -65,16 +65,18 @@ namespace SneakerOnlineShop.Pages.Admin
                     DateTime now = DateTime.Now;
 
                     //Total guest in month
-                    TotalCustomerAndGuestInMonth = await dBContext.Customers.Where(c => c.Orders
+                    TotalGuestInMonth = await dBContext.Customers.Where(c => c.Orders
                     .Any(o => ((DateTime)o.OrderDate).Year == now.Year &&
                                 ((DateTime)o.OrderDate).Month == now.Month)
                                     && c.Accounts == null).CountAsync();
 
-                    //TotalCustomer in month
+                    //Total Customer in month
                     TotalCustomerInMonth = await dBContext.Customers.Where(c => c.Orders
                                                 .Any(o => ((DateTime)o.OrderDate).Year == now.Year 
                                                     &&((DateTime)o.OrderDate).Month == now.Month)
-                                                &&c.Accounts.Any(a => a.)).CountAsync();
+                                                    &&c.Accounts.Any(a => ((DateTime)a.CreateDate).Month == now.Year
+                                                                        && ((DateTime)a.CreateDate).Month == now.Month))
+                                                .CountAsync();
 
                     //OrderInMonth
                     GetOrderInMonthToDashboard(Year);
