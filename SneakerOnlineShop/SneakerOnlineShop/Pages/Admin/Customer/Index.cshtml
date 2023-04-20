@@ -56,11 +56,14 @@
         <a href="~/admin/customer/index">
         <li>Customers</li>
         </a>
+        <a href="~/admin/dashboard">
+        <li>Dash Board</li>
+        </a>
     </ul>
 </div>
 <div id="content-right">
     <div class="path-admin">CUSTOMER LIST</b></div>
-    <div class="content-main">
+    <div class="content-main" style="width:100%">
         <div id="content-main-dashboard">
             <div id="product-title-header">                
                 <div id="product-title-2" style="width: 55%;">
@@ -69,10 +72,6 @@
                         <input type="text" name="txtSearch" placeholder="Enter customer name to search" />
                         <input type="submit" value="Search" />
                     </form>
-                </div>
-                <div id="product-title-3" style="width: 20%;">
-                    <a href="~/admin/customer/create">Create a new Customer</a>
-
                 </div>
             </div>
             <br>
@@ -87,7 +86,7 @@
                             <th>Address</th>
                             <th>Contact Name</th>
                             <th>Contact Title</th>
-                            <th>Action</th>
+                            <th>Status</th>
                             
                     </tr>
                     @foreach (var customer in customerPerPage)
@@ -101,10 +100,14 @@
                             <td>@customer.Address</td>
                             <td>@customer.ContactName</td>
                             <td>@customer.ContactTitle</td>
-                            <td>
-                                <a href="~/admin/customer/edit?id=@customer.CustomerId">Edit</a> &nbsp; | &nbsp;
-                                <a href="~/admin/customer/delete?id=@customer.CustomerId">Delete</a>
-                            </td>
+                            @{
+                                if(customer.Status == 1)
+                                {                                   
+                                    <td><button style="color:forestgreen">Active</button></td>
+                                }else{
+                                    <td><button style="color:red">In Active</button></td>
+                                }
+                            }
                         </tr>
                     }
                 </table>
