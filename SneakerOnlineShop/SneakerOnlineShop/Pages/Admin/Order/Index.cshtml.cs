@@ -14,11 +14,9 @@ namespace SneakerOnlineShop.Pages.Admin.Order
         private readonly SWP391_DBContext _dbContext;
         IMapper _mapper;
 
-        [BindProperty]
-        public bool IsFiltering { get; set; }
         public List<SneakerOnlineShop.Models.Order> orders { get; set; }
-        public SneakerOnlineShop.Models.Employee employee { get; set; }
-        public SneakerOnlineShop.Models.Order order { get; set; }
+        //public SneakerOnlineShop.Models.Employee employee { get; set; }
+        //public SneakerOnlineShop.Models.Order order { get; set; }
         public IndexModel(SWP391_DBContext dBContext, IMapper mapper)
         {
             this._dbContext = dBContext;

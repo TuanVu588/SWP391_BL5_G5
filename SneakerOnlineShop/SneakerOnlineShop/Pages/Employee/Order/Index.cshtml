@@ -1,5 +1,5 @@
 ﻿@page
-@model SneakerOnlineShop.Pages.Admin.Order.IndexModel
+@model SneakerOnlineShop.Pages.Employee.Order.IndexModel
 @{
     SneakerOnlineShop.Models.Account accSession = new SneakerOnlineShop.Models.Account();
     if (HttpContext.Session.GetString("account") != null)
@@ -14,9 +14,6 @@
         border-left: 1px solid sandybrown;
     }
 
-    .filterOrderDate {
-        margin: 5px 0px 10px 10px;
-    }
 
     .btnFilter {
         padding: 2px 8px;
@@ -24,19 +21,13 @@
     }
 </style>
 <div id="content-left">
-    <h3>Admin</h3>
+    <h3>Employee</h3>
     <ul>
-        <a href="~/admin/order/index?eId=@accSession.EmployeeId">
+        <a href="~/employee/order/index">
         <li>Orders</li>
         </a>
-        <a href="~/admin/product/index">
+        <a href="~/employee/product/viewproduct">
         <li>Products</li>
-        </a>
-        <a href="~/admin/category/index">
-        <li>Category</li>
-        </a>
-        <a href="~/admin/customer/index">
-        <li>Customers</li>
         </a>
     </ul>
 </div>
@@ -49,7 +40,7 @@
                 <form method="get" asp-page-handler="FilterOrder">
                     From: <input type="date" name="fromDate" value="@ViewData["fromDate"]" />
                     To: <input type="date" name="toDate" value="@ViewData["toDate"]" />
-                    <button asp-page="~/admin/order/index?" class="btnFilter" type="submit" value="Filter" asp-page-handler="FilterOrder">Filter</button>
+                    <button class="btnFilter" asp-page="~/admin/order/index?" type="submit" value="Filter" asp-page-handler="FilterOrder">Filter</button>
                 </form>
             </div>
             <div id="order-table">
@@ -58,11 +49,13 @@
                         <th>OrderID</th>
                         <th>OrderDate</th>
                         <th>
-                            RequiredDate 
+                            RequiredDate
                         </th>
-                        <th>ShippedDate
+                        <th>
+                            ShippedDate
                             @if (ViewData.ContainsKey("Error"))
-                            {<br />
+                            {
+                                <br />
                                 <span id="msg-error-date2" style="color: red">@ViewData["Error"]</span>
                             }
                         </th>
@@ -70,48 +63,48 @@
                         <th>Customer</th>
                         <th>Status</th>
                     </tr>
-                    @foreach(var o in Model.orders)
+                    @foreach (var o in Model.orders)
                     {
                         <form method="post" asp-page="/admin/order/index" asp-page-handler="UpdateOrder">
                         <tr>
-                            <td><a href="#">@o.OrderId</a>
+                            <td>
+                                <a href="#">@o.OrderId</a>
                                 <input type="hidden" name="orderId" value="@o.OrderId">
-                             </td>
+                            </td>
                             <td>@o.OrderDate</td>
                             <td>@o.RequiredDate</td>
                             <td>
                                     @if (@o.ShippedDate == null)
                                     {
                                     <input type="date" name="shipDate" required>
-                                    }else{
+                                    }
+                                    else
+                                    {
                                         @o.ShippedDate
                                     }
-                                   
+
                             </td>
                             <td>
                                     @if (@o.Employee != null)
                                     {
                                         @o.Employee.FirstName
-                                    }else{
-                                    <input type="hidden" name="employeeId" value="@ViewData["eid"]">
                                     }
-                             </td>
+                                    else
+                                    {
+                                    @*<input type="hidden" name="employeeId" value="@ViewData["eid"]">*@
+                                    }
+                            </td>
                             <td>@o.Customer.CustomerName</td>
                                 @if (o.Status.Equals("Pending"))
                                 {
                                 <td style="color: red;">
-                                        <input type="submit" value="Accept"
-                                        style="
-                                        color:white; background-color:forestgreen;
-                                        margin-right:2%" />
-                                        |Pendding|
-                                    <a asp-page="/admin/order/index" asp-route-orderId="@o.OrderId" asp-route-employeeId="@ViewData["eid"]" asp-page-handler="Reject">Cancel</a>
+                                    |Pendding|
                                 </td>
                                 }
                                 else
                                 {
                                 <td style="color: forestgreen;">
-                                    @o.Status
+                                        @o.Status
                                 </td>
                                 }
 
@@ -120,17 +113,17 @@
                     }
                 </table>
             </div>
-           @* <div id="paging">
-                <div class="pagination">
-                    <a href="#">&laquo;</a>
-                    <a href="#">1</a>
-                    <a href="#" class="active">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">&raquo;</a>
-                </div>
+            @* <div id="paging">
+            <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a href="#" class="active">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+            </div>
             </div>*@
         </div>
     </div>
