@@ -44,6 +44,10 @@ namespace SneakerOnlineShop.Pages.Account
                     {
                         return RedirectToPage("/admin/product/index");
                     }
+                    if (acc.RoleId == 2)
+                    {
+                        return RedirectToPage("/employee/product/viewproduct");
+                    }    
                     else
                     {
                         return RedirectToPage("/index");
