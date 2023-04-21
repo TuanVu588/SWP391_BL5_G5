@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.SignalR;
@@ -5,9 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SneakerOnlineShop.Hubs;
 using SneakerOnlineShop.Models;
+using System.Data;
 
 namespace SneakerOnlineShop.Pages.Admin.Product
 {
+    
     public class CreateModel : PageModel
     {
         private readonly SWP391_DBContext dBContext;

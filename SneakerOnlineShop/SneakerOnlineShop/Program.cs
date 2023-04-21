@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using SneakerOnlineShop.Models;
 
@@ -12,7 +13,6 @@ builder.Services.AddDbContext<SWP391_DBContext>(opt =>
 //builder.Services.AddScoped<SWP391_DBContext>();
 builder.Services.AddSession(opt => opt.IdleTimeout = TimeSpan.FromMinutes(30));
 builder.Services.AddAutoMapper(typeof(SneakerOnlineShop.DTO.MapperProfile));
-
 var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
@@ -21,8 +21,8 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseHttpsRedirection();
 app.UseRouting();
-
 app.UseAuthorization();
+app.UseAuthentication();
 app.UseStaticFiles();
 app.UseSession();
 app.MapRazorPages();
