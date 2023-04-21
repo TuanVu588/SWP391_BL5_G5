@@ -108,7 +108,6 @@ namespace SneakerOnlineShop.Pages.Admin
         }
          public void GetOrderInMonthToDashboard(int? Year)
         {
-
             jan = dBContext.Orders.Where(x => (((DateTime)x.OrderDate).Year == Year) && (((DateTime)x.OrderDate).Month == 1)).Count();
             feb = dBContext.Orders.Where(x => (((DateTime)x.OrderDate).Year == Year) && (((DateTime)x.OrderDate).Month == 2)).Count();
             mar = dBContext.Orders.Where(x => (((DateTime)x.OrderDate).Year == Year) && (((DateTime)x.OrderDate).Month == 3)).Count();
@@ -117,11 +116,10 @@ namespace SneakerOnlineShop.Pages.Admin
             jun = dBContext.Orders.Where(x => (((DateTime)x.OrderDate).Year == Year) && (((DateTime)x.OrderDate).Month == 6)).Count();
             jul = dBContext.Orders.Where(x => (((DateTime)x.OrderDate).Year == Year) && (((DateTime)x.OrderDate).Month == 7)).Count();
             aug = dBContext.Orders.Where(x => (((DateTime)x.OrderDate).Year == Year) && (((DateTime)x.OrderDate).Month == 8)).Count();
-            sep  = dBContext.Orders.Where(x => (((DateTime)x.OrderDate).Year == Year) && (((DateTime)x.OrderDate).Month == 9)).Count();
+            sep = dBContext.Orders.Where(x => (((DateTime)x.OrderDate).Year == Year) && (((DateTime)x.OrderDate).Month == 9)).Count();
             oct = dBContext.Orders.Where(x => (((DateTime)x.OrderDate).Year == Year) && (((DateTime)x.OrderDate).Month == 10)).Count();
             nov = dBContext.Orders.Where(x => (((DateTime)x.OrderDate).Year == Year) && (((DateTime)x.OrderDate).Month == 11)).Count();
             dec = dBContext.Orders.Where(x => (((DateTime)x.OrderDate).Year == Year) && (((DateTime)x.OrderDate).Month == 12)).Count();
-
         }
     }
 }

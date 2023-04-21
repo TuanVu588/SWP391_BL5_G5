@@ -14,6 +14,7 @@ namespace SneakerOnlineShop.Pages.Category
         public string SizeFilter { get; set; }
         public string NameFilter { get; set; }
         public string ColorFilter { get; set; }
+        public Models.Category Category { get; set; }
         public IList<Product> Products { get; set; }
 
         public IndexModel(SWP391_DBContext dBContext)
@@ -27,6 +28,9 @@ namespace SneakerOnlineShop.Pages.Category
 
             //int totalProduct = productsByCateId;
             var productPerPage = await _dbContext.Products.Where(p => p.CategoryId == cid).ToListAsync();
+
+            //cateid
+            Category = await _dbContext.Categories.Where(p => p.CategoryId == cid).FirstOrDefaultAsync();
 
             //my code
             var list = _dbContext.Products.Select(p => p.Size).Distinct().ToList();

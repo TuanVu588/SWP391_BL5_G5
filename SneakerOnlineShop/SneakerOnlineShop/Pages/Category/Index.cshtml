@@ -33,7 +33,7 @@
 </div>
 <div id="content-right">
    
-    <div class="path">CategoryName</b></div>
+    <div class="path">@Model.Category.CategoryName</b></div>
     <div style="display:flex;width:100%;">
         <div style="display:flex;width:30%;">
         <a asp-page="/category/index" asp-route-cid="@Model.cid" asp-route-PriceSort="price_desc" asp-route-SizeFilter="@Model.SizeFilter" asp-route-NameFilter="@Model.NameFilter" asp-route-ColorFilter="@Model.ColorFilter">
