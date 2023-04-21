@@ -106,13 +106,13 @@
                     @*<li><a href="~/account/cart">Cart: @Cart.Count()</a></li>*@
                     @if (Context.Session.GetString("account") == null)
                     {
-                        <li><a href="~/account/login">Login</a></li>
-                        <li><a href="~/account/signup">SignUp</a></li>
+                        <li><a href="~/account/login" class="btn-sign">Login</a></li>
+                        <li><a href="~/account/signup" class="btn-sign">SignUp</a></li>
                     }
                     else
                     {
-                        <li><a href="~/account/profile?accId=@accSession.AccountId">Profile</a></li>
-                        <li><a href="~/account/login">SignOut</a></li>
+                        <li><a href="~/account/profile?accId=@accSession.AccountId" class="btn-sign">Profile</a></li>
+                        <li><a href="~/account/login" class="btn-sign">SignOut</a></li>
                     }
                 </ul>
             </div>

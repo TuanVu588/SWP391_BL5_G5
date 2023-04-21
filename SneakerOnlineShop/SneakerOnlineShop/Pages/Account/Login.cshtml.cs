@@ -1,14 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MyRazorPage.common;
 using SneakerOnlineShop.Models;
+using System.Security.Claims;
 using System.Security.Principal;
 using System.Text.Json;
 
 namespace SneakerOnlineShop.Pages.Account
 {
+    
     public class LoginModel : PageModel
     {
         private readonly SWP391_DBContext dBContext;
@@ -23,7 +28,8 @@ namespace SneakerOnlineShop.Pages.Account
         {
             HttpContext.Session.Remove("account");
         }
-
+        
+        
         public async Task<IActionResult> OnPostAsync()
         {
             if (ModelState.IsValid)
@@ -42,7 +48,7 @@ namespace SneakerOnlineShop.Pages.Account
                     //TODO: return Page
                     if (acc.RoleId == 3)
                     {
-                        return RedirectToPage("/admin/dashboard");
+                        return RedirectToPage("/admin/category/index");
                     }
                     if (acc.RoleId == 2)
                     {

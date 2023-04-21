@@ -65,7 +65,7 @@
     <div class="path-admin">CUSTOMER LIST</b></div>
     <div class="content-main" style="width:100%">
         <div id="content-main-dashboard">
-            <div id="product-title-header">                
+            <div id="product-title-header">
                 <div id="product-title-2" style="width: 55%;">
                     <form method="get">
                         <input id="catIdForSearch" type="hidden" name="catId" />
@@ -79,19 +79,19 @@
             <div id="order-table-admin">
                 <table id="productListAdmin">
                     <tr>
-                            <th>Customer ID</th>
-                            <th>Customer Name</th>
-                            <th>Company Name</th>
-                            <th>Phone</th>
-                            <th>Address</th>
-                            <th>Contact Name</th>
-                            <th>Contact Title</th>
-                            <th>Status</th>
-                            
+                        <th>Customer ID</th>
+                        <th>Customer Name</th>
+                        <th>Company Name</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Contact Name</th>
+                        <th>Contact Title</th>
+                        <th>Status</th>
+
                     </tr>
                     @foreach (var customer in customerPerPage)
                     {
-                        
+
                         <tr>
                             <td>@customer.CustomerId</td>
                             <td>@customer.CustomerName</td>
@@ -101,11 +101,13 @@
                             <td>@customer.ContactName</td>
                             <td>@customer.ContactTitle</td>
                             @{
-                                if(customer.Status == 1)
-                                {                                   
-                                    <td><button style="color:forestgreen">Active</button></td>
-                                }else{
-                                    <td><button style="color:red">In Active</button></td>
+                                if (customer.Status == 1)
+                                {
+                                    <td><button class="btn-status">Active</button></td>
+                                }
+                                else
+                                {
+                                    <td><button class="btn-status">In Active</button></td>
                                 }
                             }
                         </tr>
@@ -124,4 +126,5 @@
     </div>
 
 </div>
+
 

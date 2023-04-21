@@ -4,9 +4,12 @@ using Microsoft.AspNetCore.SignalR;
 using SneakerOnlineShop.Hubs;
 using SneakerOnlineShop.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace SneakerOnlineShop.Pages.Admin.Product
 {
+   
     public class DeleteModel : PageModel
     {
         private readonly SWP391_DBContext dBContext;
