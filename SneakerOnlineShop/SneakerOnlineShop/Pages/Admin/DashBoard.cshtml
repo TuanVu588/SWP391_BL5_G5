@@ -26,7 +26,7 @@
 <div id="content-left">
     <h3>Admin</h3>
     <ul>
-        <a href="~/admin/order/index?eId=@accSession.EmployeeId">
+        <a asp-page="/admin/order/index" asp-route-eid="@accSession.EmployeeId">
         <li>Orders</li>
         </a>
         <a href="~/admin/product/index">
@@ -51,7 +51,7 @@
             <div id="dashboard-1">
                 <div id="dashboard-1-container">
                     <div class="dashboard-item">
-                        <div class="dashboard-item-title"><a asp-page="/admin/order/index" asp-route-orderId="=@accSession.EmployeeId">Orders has not been approved</a></div>
+                        <div class="dashboard-item-title"><a asp-page="/admin/order/index" asp-route-eid="@accSession.EmployeeId">Orders has not been approved</a></div>
                         <div class="dashboard-item-content">@Model.TotalOrdersNotApproved</div>
                     </div>
                     <div class="dashboard-item">
