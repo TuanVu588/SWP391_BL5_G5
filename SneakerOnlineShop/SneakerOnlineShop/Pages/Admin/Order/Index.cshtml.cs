@@ -13,21 +13,38 @@ namespace SneakerOnlineShop.Pages.Admin.Order
     {
         private readonly SWP391_DBContext _dbContext;
         IMapper _mapper;
-        public List<SneakerOnlineShop.Models.Order> orders{ get; set; }
-        public SneakerOnlineShop.Models.Employee employee { get; set; }
-        public SneakerOnlineShop.Models.Order order { get; set; }
+
+        public List<SneakerOnlineShop.Models.Order> orders { get; set; }
+        //public SneakerOnlineShop.Models.Employee employee { get; set; }
+        //public SneakerOnlineShop.Models.Order order { get; set; }
         public IndexModel(SWP391_DBContext dBContext, IMapper mapper)
         {
             this._dbContext = dBContext;
             _mapper = mapper;
         }
-        public async Task<IActionResult> OnGet(int eid)
+
+        public async Task<IActionResult> OnGet(int eid, string fromDate, string toDate)
         {
-            getAllOrder(eid);
+            if (string.IsNullOrEmpty(fromDate) && string.IsNullOrEmpty(toDate))
+            {
+                getAllOrder(eid);
+
+            }
+            else
+            {
+                OnGetFilterOrder(fromDate, toDate);
+            }
             return Page();
         }
 
-   
+        private void getAllOrder(int eid)
+        {
+            ViewData["eid"] = eid;
+            orders = (List<SneakerOnlineShop.Models.Order>)_dbContext.Orders
+                    .Include(o => o.Employee)
+                    .Include(o => o.Customer).ToList();
+        }
+
         // order status: complete
         public async Task<IActionResult> OnPostUpdateOrder(String shipDate, String orderId, String employeeId)
         {
@@ -41,10 +58,11 @@ namespace SneakerOnlineShop.Pages.Admin.Order
             if (DateTime.Compare(DateTime.Now, shippedDate) > 0
                 || DateTime.Compare(shippedDate, (DateTime)order.RequiredDate) > 0)
             {
-                ViewData["Error"] = "ShipDate must be greatter than today and lower than required date";
+                ViewData["Error"] = "RequireDate must be greatter than today";
                 return Page();
             }
-            if (order != null) {
+            if (order != null)
+            {
                 order.ShippedDate = shippedDate;
                 order.EmployeeId = eid;
                 order.Status = "Complete";
@@ -68,12 +86,24 @@ namespace SneakerOnlineShop.Pages.Admin.Order
             }
             return Page();
         }
-        private void getAllOrder(int eid)
+        public async void OnGetFilterOrder(string fromDate, string toDate)
         {
-            ViewData["eid"] = eid;
-            orders = (List<SneakerOnlineShop.Models.Order>)_dbContext.Orders
-                    .Include(o => o.Employee)
-                    .Include(o => o.Customer).ToList();
+            orders = _dbContext.Orders.Include(o => o.Employee)
+                    .Include(o => o.Customer).Include(x => x.OrderDetails)
+                .ThenInclude(od => od.Product)
+                .ThenInclude(p => p.ProductImages).ToList();
+
+            if (fromDate != null && !fromDate.Equals(""))
+            {
+                orders = orders.Where(o => o.OrderDate >= DateTime.Parse(fromDate)).ToList();
+            }
+            if (toDate != null && !toDate.Equals(""))
+            {
+                orders = orders.Where(o => o.OrderDate <= DateTime.Parse(toDate)).ToList();
+            }
+            ViewData["fromDate"] = fromDate;
+            ViewData["toDate"] = toDate;
+            //return Page();
         }
 
     }
