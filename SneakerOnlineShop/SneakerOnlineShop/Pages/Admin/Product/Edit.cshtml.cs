@@ -1,12 +1,15 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using SneakerOnlineShop.Hubs;
 using SneakerOnlineShop.Models;
+using System.Data;
 
 namespace SneakerOnlineShop.Pages.Admin.Product
 {
+    
     public class EditModel : PageModel
     {
         private readonly SWP391_DBContext dBContext;

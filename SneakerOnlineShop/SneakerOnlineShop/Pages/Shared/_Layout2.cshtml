@@ -9,15 +9,27 @@
     <link href="~/css/style.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </head>
+<style>
+    #banner{
+        padding-top:100px;
+        width:100%;
+    }
+
+    .admin li {
+        float: right;
+        /* margin-left: 20px; */
+        display: inline-block;
+    }
+</style>
 <body>
     <div id="container">
         <div id="header">
             <div id="logo-admin">
                 Ecommerce Admin
             </div>
-            <div id="banner-admin">
+            <div id="banner">
                 <ul>
-                    <li><a href="~/account/login">SignOut</a></li>
+                    <li><a href="~/account/login" class="btn-sign">SignOut</a></li>
                 </ul>
             </div>
         </div>

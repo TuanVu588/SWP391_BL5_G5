@@ -37,7 +37,7 @@
 
     .btnSort {
         min-width: 150px;
-        background-color: forestgreen;
+        background-color: brown;
         color: #fff;
         margin: 0 10px 10px 10px;
         line-height: 40px;
@@ -47,7 +47,7 @@
     }
 
     .btnSort:hover {
-            background-color: limegreen;
+            background-color: chocolate;
         }
 
     #product-title-2 {
@@ -74,6 +74,7 @@
     </ul>
 </div>
 <div id="content-right" >
+    <div class="path">Category Name</div>
     <div id="product-title-header">
         <div id="product-title-1" style="width: 17%;">
             <a asp-page="./index" asp-route-PriceSort="price_desc" asp-route-SizeFilter="@Model.SizeFilter" asp-route-NameFilter="@Model.NameFilter" asp-route-ColorFilter="@Model.ColorFilter">

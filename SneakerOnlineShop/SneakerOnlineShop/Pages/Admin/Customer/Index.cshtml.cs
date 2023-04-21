@@ -1,10 +1,13 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SneakerOnlineShop.Models;
+using System.Data;
 
 namespace SneakerOnlineShop.Pages.Admin.Customer
 {
+    
     public class IndexModel : PageModel
     {
         private readonly SWP391_DBContext dBContext;

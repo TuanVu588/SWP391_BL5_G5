@@ -15,6 +15,7 @@ namespace SneakerOnlineShop.Pages.Category
         public string NameFilter { get; set; }
         public string ColorFilter { get; set; }
         public IList<Product> Products { get; set; }
+        
 
         public IndexModel(SWP391_DBContext dBContext)
         {
@@ -31,7 +32,7 @@ namespace SneakerOnlineShop.Pages.Category
             //my code
             var list = _dbContext.Products.Select(p => p.Size).Distinct().ToList();
             ViewData["listSize"] = list;
-
+            
             var categories = await _dbContext.Categories.ToListAsync();
             ViewData["categories"] = categories;
             this.PriceSort = PriceSort;
