@@ -28,6 +28,8 @@
             <span class="msg-error" asp-validation-for="Customer.Address"></span><br />
             <label>Email<span style="color: red;">*</span></label><br />
             <input asp-for="Account.Email" /><br />
+            <label>date<span style="color: red;">*</span></label><br />
+            <input type="date" asp-for="Account.CreateDate" /><br />
             <span class="msg-error" asp-validation-for="Account.Email"></span><br />
             <label>Password<span style="color: red;">*</span></label><br />
             <input asp-for="Account.Password" id="password" type="password"/><br />

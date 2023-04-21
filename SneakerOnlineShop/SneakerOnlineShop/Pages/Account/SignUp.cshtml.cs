@@ -49,7 +49,7 @@ namespace SneakerOnlineShop.Pages.Account
                         ContactName = Customer.ContactName
                     };
                     var newAcc = new Models.Account()
-                    {
+                    {   CreateDate = Account.CreateDate,
                         Email = Account.Email,
                         Password = Account.Password,
                         CustomerId = cust.CustomerId,
