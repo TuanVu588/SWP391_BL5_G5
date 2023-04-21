@@ -35,13 +35,12 @@ namespace SneakerOnlineShop.Pages.Account
                 mail.Subject = "Password recovery";
                 mail.Body = $@"<p>Hi,<br/> This is Sneaker Online Shop. Your new password is: {newPass}<br/>Have a good day!</p><br/><p>To change password, GO TO this link: https://localhost:7139/account/changepassword</p>";
                 mail.IsBodyHtml = true;
-
                 SmtpClient smtp = new SmtpClient();
                 smtp.Port = 587;
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
                 smtp.Host = "smtp.gmail.com";
-                smtp.Credentials = new System.Net.NetworkCredential("acc2hunglm@gmail.com", "lmvahgbghhyxeqzb");
+                smtp.Credentials = new System.Net.NetworkCredential("acc2hunglm@gmail.com", "");
                 smtp.Send(mail);
             }
 
