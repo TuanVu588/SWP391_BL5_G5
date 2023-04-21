@@ -34,7 +34,7 @@ namespace SneakerOnlineShop.Pages.Account
         {
             if (ModelState.IsValid)
             {
-                var acc = await findByEmailAndPassword(account.Email, account.Email);
+                var acc = await findByEmailAndPassword(account.Email, account.Password);
 
                 if (acc is not null)
                 {

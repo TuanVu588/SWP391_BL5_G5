@@ -28,6 +28,7 @@ namespace SneakerOnlineShop.Pages.Admin.Order
 
         public async Task<IActionResult> OnGet(int eid, string fromDate, string toDate)
         {
+            //int employeeId = int.Parse(eid);
             if (string.IsNullOrEmpty(fromDate) && string.IsNullOrEmpty(toDate))
             {
                 getAllOrder(eid);
@@ -35,7 +36,7 @@ namespace SneakerOnlineShop.Pages.Admin.Order
             }
             else
             {
-                OnGetFilterOrder(fromDate, toDate);
+                OnGetFilterOrder(fromDate, toDate, eid.ToString());
             }
             return Page();
         }
@@ -89,8 +90,10 @@ namespace SneakerOnlineShop.Pages.Admin.Order
             }
             return Page();
         }
-        public async void OnGetFilterOrder(string fromDate, string toDate)
+        public async Task<IActionResult> OnGetFilterOrder(string fromDate, string toDate, String eid)
         {
+            int employeeId = int.Parse(eid);
+            ViewData["eid"] = employeeId;
             orders = _dbContext.Orders.Include(o => o.Employee)
                     .Include(o => o.Customer).Include(x => x.OrderDetails)
                 .ThenInclude(od => od.Product)
@@ -106,7 +109,7 @@ namespace SneakerOnlineShop.Pages.Admin.Order
             }
             ViewData["fromDate"] = fromDate;
             ViewData["toDate"] = toDate;
-            //return Page();
+            return Page();
         }
 
     }
