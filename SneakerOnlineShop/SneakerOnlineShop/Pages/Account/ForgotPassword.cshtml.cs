@@ -26,11 +26,25 @@ namespace SneakerOnlineShop.Pages.Account
             
             if(acc != null)
             {
-                //String newPass = RandomPassword();
-                //acc.Password = newPass;
-                //await _dbContext.SaveChangesAsync();
+                String newPass = RandomPassword();
+                acc.Password = newPass;
+                await _dbContext.SaveChangesAsync();
+                MailMessage mail = new MailMessage();
+                mail.To.Add(email.ToString().Trim());
+                mail.From = new MailAddress("acc2hunglm@gmail.com");
+                mail.Subject = "Password recovery";
+                mail.Body = $@"<p>Hi,<br/> This is Sneaker Online Shop. Your new password is: {newPass}<br/>Have a good day!</p><br/><p>To change password, GO TO this link: https://localhost:7139/account/changepassword</p>";
+                mail.IsBodyHtml = true;
+
+                SmtpClient smtp = new SmtpClient();
+                smtp.Port = 587;
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Host = "smtp.gmail.com";
+                smtp.Credentials = new System.Net.NetworkCredential("acc2hunglm@gmail.com", "lmvahgbghhyxeqzb");
+                smtp.Send(mail);
             }
-           
+
             //Info to user
             ViewData["msg"] = "We have send password. Thankyou so much";
             return Page();
