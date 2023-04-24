@@ -1,4 +1,4 @@
-*{margin: 0px; padding: 0px;font-size: 16px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+*{margin: 0px; padding: 0px;font-size: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
 
 body {
     background-image: url('../img/background-index.jpg');
@@ -350,7 +350,7 @@ body {
 }
 
 #product-img img{
-    width: 100%;
+    width: 80%;
 }
 
 #product-img-items{
