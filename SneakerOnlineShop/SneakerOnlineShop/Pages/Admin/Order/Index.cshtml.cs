@@ -85,9 +85,9 @@ namespace SneakerOnlineShop.Pages.Admin.Order
             var order = _dbContext.Orders.FirstOrDefault(o => o.OrderId == oid);
 
             if (DateTime.Compare(DateTime.Now, shippedDate) > 0
-                || DateTime.Compare(shippedDate, (DateTime)order.RequiredDate) > 0)
+                || DateTime.Compare(shippedDate, (DateTime)order.RequiredDate) >= 0)
             {
-                ViewData["Error"] = "RequireDate must be greatter than today";
+                ViewData["Error"] = "Now < ShipDate <= RequiredDate";
                 return Page();
             }
             if (order != null)
