@@ -27,7 +27,6 @@ namespace SneakerOnlineShop.Pages.Account
                 ViewData["invalid"] = "Invalid password. Enter again";
                 return Page();
             }
-
             //check trung voi pass hay khong
             if(!password.Equals(rePassword)) {
                 ViewData["notMatch"] = "Password not match repassword";
@@ -42,6 +41,7 @@ namespace SneakerOnlineShop.Pages.Account
                 return Page();
             }
             //cap nhat lai account
+            ViewData["Success"] = "Password change success";
             acc.Password = password;
             _dbContext.SaveChangesAsync();
             return Page();

@@ -33,7 +33,7 @@ namespace SneakerOnlineShop.Pages.Account
                 mail.To.Add(email.ToString().Trim());
                 mail.From = new MailAddress("acc2hunglm@gmail.com");
                 mail.Subject = "Password recovery";
-                mail.Body = $@"<p>Hi,<br/> This is Sneaker Online Shop. Your new password is: {newPass}<br/>Have a good day!</p><br/><p>To change password, GO TO this link: https://localhost:7139/account/changepassword</p>";
+                mail.Body = $"<p>Hi,<br/> This is Sneaker Online Shop. Your new password is: {newPass} <br/>To change password, GO TO this link: https://localhost:7139/account/changepassword</p><p>Have a good day!</p>";
                 mail.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient();
                 smtp.Port = 587;

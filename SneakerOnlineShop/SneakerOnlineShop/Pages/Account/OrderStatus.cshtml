@@ -49,47 +49,51 @@
     <div class="content-main" style="width:100%">
         <div id="profile-content-order">
             <div>
-                @foreach (var o in Model.orders)
+                @if (@Model.orders is not null)
                 {
-                    <div class="profile-order-title">
-                        <div class="profile-order-title-left">
-                            <div>@o.OrderDate</div>
-                            <div>Order: <a href="#">@o.OrderId</a></div>
-                        </div>
-                        @if (@o.Status.Equals("Pending"))
-                        {
-                            <div class="profile-order-title-right">
-                                <span>Pending</span>
-                            </div>
-                        }
-                        else if (@o.Status.Equals("Reject"))
-                        {
-                            <div class="profile-order-title-right">
-                                <span>Reject</span>
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="profile-order-title-right">
-                                <span style="color: blue;">Completed</span>
-                            </div>
-                        }
-                    </div>
-                    @foreach (var od in o.OrderDetails)
+                    @foreach (var o in Model.orders)
                     {
-                        <div class="profile-order-content">
-                            @if (@od.Product.ProductImages.FirstOrDefault() is not null)
+                        <div class="profile-order-title">
+                            <div class="profile-order-title-left">
+                                <div>@o.OrderDate</div>
+                                <div>Order: <a href="#">@o.OrderId</a></div>
+                            </div>
+                            @if (@o.Status.Equals("Pending"))
                             {
-                                <div class="profile-order-content-col1">
-                                    <a href="detail.html"><img src="~/img/@od.Product.ProductImages.FirstOrDefault().ImagePath" width="100%" /></a>
+                                <div class="profile-order-title-right">
+                                    <span>Pending</span>
                                 </div>
                             }
-                            <div class="profile-order-content-col2">@od.Product.ProductName</div>
-                            <div class="profile-order-content-col3">@od.Quantity</div>
-                            <div class="profile-order-content-col4"> $@(System.Math.Round(od.Quantity * (decimal)od.Product.UnitPrice, 0))</div>
+                            else if (@o.Status.Equals("Reject"))
+                            {
+                                <div class="profile-order-title-right">
+                                    <span>Reject</span>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="profile-order-title-right">
+                                    <span style="color: blue;">Completed</span>
+                                </div>
+                            }
                         </div>
+                        @foreach (var od in o.OrderDetails)
+                        {
+                            <div class="profile-order-content">
+                                @if (@od.Product.ProductImages.FirstOrDefault() is not null)
+                                {
+                                    <div class="profile-order-content-col1">
+                                        <a href="detail.html"><img src="~/img/@od.Product.ProductImages.FirstOrDefault().ImagePath" width="100%" /></a>
+                                    </div>
+                                }
+                                <div class="profile-order-content-col2">@od.Product.ProductName</div>
+                                <div class="profile-order-content-col3">@od.Quantity</div>
+                                <div class="profile-order-content-col4"> $@(System.Math.Round(od.Quantity * (decimal)od.Product.UnitPrice, 0))</div>
+                            </div>
+                        }
                     }
                 }
+               
             </div>
         </div>
     </div>

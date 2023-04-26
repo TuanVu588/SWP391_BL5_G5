@@ -15,6 +15,9 @@ namespace SneakerOnlineShop.Pages.Admin.Order
     public class IndexModel : PageModel
     {
         private readonly SWP391_DBContext _dbContext;
+        [BindProperty]
+        public Models.Account? account { get; set; }
+
         IMapper _mapper;
 
         public List<SneakerOnlineShop.Models.Order> orders { get; set; }
@@ -28,17 +31,38 @@ namespace SneakerOnlineShop.Pages.Admin.Order
 
         public async Task<IActionResult> OnGet(int eid, string fromDate, string toDate)
         {
-            //int employeeId = int.Parse(eid);
-            if (string.IsNullOrEmpty(fromDate) && string.IsNullOrEmpty(toDate))
+            String? accountSession = HttpContext.Session.GetString("account");
+            if (accountSession is not null)
             {
-                getAllOrder(eid);
+                account = JsonSerializer.Deserialize<Models.Account>(accountSession);
+                if (account is not null && account.RoleId == 3)
+                {
+                    //bussness logic-code cua mn
+                    //int employeeId = int.Parse(eid);
+                    if (string.IsNullOrEmpty(fromDate) && string.IsNullOrEmpty(toDate))
+                    {
+                        getAllOrder(eid);
 
+                    }
+                    else
+                    {
+                        OnGetFilterOrder(fromDate, toDate, eid.ToString());
+                    }
+                    return Page();
+
+                    return Page();
+                }
+                else
+                {
+                    return Redirect("/account/login");
+                }
             }
             else
             {
-                OnGetFilterOrder(fromDate, toDate, eid.ToString());
+                return Redirect("/account/login");
             }
-            return Page();
+
+
         }
 
         private void getAllOrder(int eid)
@@ -46,7 +70,8 @@ namespace SneakerOnlineShop.Pages.Admin.Order
             ViewData["eid"] = eid;
             orders = (List<SneakerOnlineShop.Models.Order>)_dbContext.Orders
                     .Include(o => o.Employee)
-                    .Include(o => o.Customer).ToList();
+                    .Include(o => o.Customer)
+                    .OrderByDescending(o => o.OrderDate).ToList();
         }
 
         // order status: complete
@@ -77,18 +102,38 @@ namespace SneakerOnlineShop.Pages.Admin.Order
         //reject order: reject
         public async Task<IActionResult> OnGetReject(String employeeId, String orderId)
         {
-            int oid = Int32.Parse(orderId);
-            int eid = Int32.Parse(employeeId);
-            getAllOrder(eid);
 
-            //update lai status
-            var order = _dbContext.Orders.FirstOrDefault(o => o.OrderId == oid);
-            if (order != null)
+            String? accountSession = HttpContext.Session.GetString("account");
+            if (accountSession is not null)
             {
-                order.Status = "Reject";
-                _dbContext.SaveChanges();
+                account = JsonSerializer.Deserialize<Models.Account>(accountSession);
+                if (account is not null && account.RoleId == 3)
+                {
+                    //bussness logic-code cua mn
+                    int oid = Int32.Parse(orderId);
+                    int eid = Int32.Parse(employeeId);
+                    getAllOrder(eid);
+
+                    //update lai status
+                    var order = _dbContext.Orders.FirstOrDefault(o => o.OrderId == oid);
+                    if (order != null)
+                    {
+                        order.Status = "Reject";
+                        _dbContext.SaveChanges();
+                    }
+                    return Page();
+                }
+                else
+                {
+                    return Redirect("/account/login");
+                }
+
             }
-            return Page();
+            else
+            {
+                return Redirect("/account/login");
+            }
+
         }
         public async Task<IActionResult> OnGetFilterOrder(string fromDate, string toDate, String eid)
         {
