@@ -77,7 +77,6 @@
             margin: 10px 5px;
         }
 
-
         .container {
             padding: 25px;
             background-color: lightblue;
@@ -111,6 +110,7 @@
             <label>Password<span style="color: red;">*</span></label><br />
             <input type="password" asp-for="account.Password" /><br />
             <span class="msg-error" asp-validation-for="account.Password"></span><br />
+            <div><a href="/account/forgotpassword">Forgot password?</a></div>
             <input type="submit" value="SIGN IN" /><br />
 
         </form>

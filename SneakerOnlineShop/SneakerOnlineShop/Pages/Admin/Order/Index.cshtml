@@ -74,54 +74,62 @@
                         <th>Customer</th>
                         <th>Status</th>
                     </tr>
-                    @foreach(var o in Model.orders)
+                    @if (@Model.orders is not null)
                     {
-                        <form method="post" asp-page="/admin/order/index" asp-page-handler="UpdateOrder">
-                        <tr>
-                            <td><a href="#">@o.OrderId</a>
-                                <input type="hidden" name="orderId" value="@o.OrderId">
-                             </td>
-                            <td>@o.OrderDate</td>
-                            <td>@o.RequiredDate</td>
-                            <td>
-                                    @if (@o.ShippedDate == null)
+                        @foreach (var o in Model.orders)
+                        {
+                            <form method="post" asp-page="/admin/order/index" asp-page-handler="UpdateOrder">
+                            <tr>
+                                <td>
+                                    <a href="#">@o.OrderId</a>
+                                    <input type="hidden" name="orderId" value="@o.OrderId">
+                                </td>
+                                <td>@o.OrderDate</td>
+                                <td>@o.RequiredDate</td>
+                                <td>
+                                        @if (@o.ShippedDate == null)
+                                        {
+                                        <input type="date" name="shipDate" required>
+                                        }
+                                        else
+                                        {
+                                            @o.ShippedDate
+                                        }
+
+                                </td>
+                                <td>
+                                        @if (@o.Employee != null)
+                                        {
+                                            @o.Employee.FirstName
+                                        }
+                                        else
+                                        {
+                                        <input type="hidden" name="employeeId" value="@ViewData["eid"]">
+                                        }
+                                </td>
+                                <td>@o.Customer.CustomerName</td>
+                                    @if (o.Status.Equals("Pending"))
                                     {
-                                    <input type="date" name="shipDate" required>
-                                    }else{
-                                        @o.ShippedDate
-                                    }
-                                   
-                            </td>
-                            <td>
-                                    @if (@o.Employee != null)
-                                    {
-                                        @o.Employee.FirstName
-                                    }else{
-                                    <input type="hidden" name="employeeId" value="@ViewData["eid"]">
-                                    }
-                             </td>
-                            <td>@o.Customer.CustomerName</td>
-                                @if (o.Status.Equals("Pending"))
-                                {
-                                <td style="color: red;">
+                                    <td style="color: red;">
                                         <input type="submit" value="Accept"
-                                        style="
+                                               style="
                                         color:white; background-color:forestgreen;
                                         margin-right:2%" />
                                         |Pendding|
-                                    <a asp-page="/admin/order/index" asp-route-orderId="@o.OrderId" asp-route-employeeId="@ViewData["eid"]" asp-page-handler="Reject">Cancel</a>
-                                </td>
-                                }
-                                else
-                                {
-                                <td style="color: forestgreen;">
-                                    @o.Status
-                                </td>
-                                }
-
-                        </tr>
-                        </form>
+                                        <a asp-page="/admin/order/index" asp-route-orderId="@o.OrderId" asp-route-employeeId="@ViewData["eid"]" asp-page-handler="Reject">Cancel</a>
+                                    </td>
+                                    }
+                                    else
+                                    {
+                                    <td style="color: forestgreen;">
+                                            @o.Status
+                                    </td>
+                                    }
+                            </tr>
+                            </form>
+                        }
                     }
+                 
                 </table>
             </div>
            @* <div id="paging">
