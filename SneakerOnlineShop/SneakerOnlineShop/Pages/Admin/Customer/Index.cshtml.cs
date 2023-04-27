@@ -25,11 +25,12 @@ namespace SneakerOnlineShop.Pages.Admin.Customer
         public async Task<IActionResult> OnGet(int numPage, string catId, string txtSearch)
         {
             String? accountSession = HttpContext.Session.GetString("account");
-            Account = JsonSerializer.Deserialize<Models.Account>(accountSession);
+            
             if (accountSession is not null)
             {
                 if(Account is not null && Account.RoleId == 3)
                 {
+                    Account = JsonSerializer.Deserialize<Models.Account>(accountSession);
                     if (numPage <= 0)
                     {
                         numPage = 1;
