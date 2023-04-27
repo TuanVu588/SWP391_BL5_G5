@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
+using System.Text.Json;
 using SneakerOnlineShop.Models;
 
 namespace SneakerOnlineShop.Pages.Account
@@ -25,29 +25,45 @@ namespace SneakerOnlineShop.Pages.Account
         }
         public async Task<IActionResult> OnGet(int accId)
         {
-            if (accId == 0)
+            String? accountSession = HttpContext.Session.GetString("account");
+            if (accountSession is not null)
             {
-                return RedirectToPage("/index");
+                var acc = JsonSerializer.Deserialize<Models.Account>(accountSession);
+                if (acc is not null && acc.RoleId == 1)
+                {
+                    //if (accId == 0)
+                    //{
+                    //    return RedirectToPage("/index");
+                    //}
+                    //var acc = await dBContext.Accounts.Where(a => a.AccountId == accId).FirstOrDefaultAsync();
+                    //if (acc.RoleId == 2)
+                    //{
+                    //    var emp = await dBContext.Employees.Where(e => e.EmployeeId == acc.EmployeeId).FirstOrDefaultAsync();
+                    //}
+                    //if (acc.RoleId == 1)
+                    //{
+                    var cust = await dBContext.Customers.Where(c => c.CustomerId.Equals(acc.CustomerId)).FirstOrDefaultAsync();
+                    ViewData["CustomerName"] = cust.CustomerName;
+                    ViewData["CompanyName"] = cust.CompanyName;
+                    ViewData["CompanyTitle"] = cust.ContactTitle;
+                    ViewData["ContactName"] = cust.ContactName;
+                    ViewData["Address"] = cust.Address;
+                    ViewData["Phone"] = cust.Phone;
+
+                    Customer = cust;
+                    return Page();
+
+                }
+
+                else
+                {
+                    return Redirect("/account/login");
+                }
             }
-            var acc = await dBContext.Accounts.Where(a => a.AccountId == accId).FirstOrDefaultAsync();
-            //if (acc.RoleId == 2)
-            //{
-            //    var emp = await dBContext.Employees.Where(e => e.EmployeeId == acc.EmployeeId).FirstOrDefaultAsync();
-            //}
-            if (acc.RoleId == 1)
+            else
             {
-                var cust = await dBContext.Customers.Where(c => c.CustomerId.Equals(acc.CustomerId)).FirstOrDefaultAsync();
-                ViewData["CustomerName"] = cust.CustomerName;
-                ViewData["CompanyName"] = cust.CompanyName;
-                ViewData["CompanyTitle"] = cust.ContactTitle;
-                ViewData["ContactName"] = cust.ContactName;
-                ViewData["Address"] = cust.Address;
-                ViewData["Phone"] = cust.Phone;
-
-                Customer = cust;
-
+                return Redirect("/account/login");
             }
-            return Page();
         }
 
         public async Task<IActionResult> OnPost()
@@ -73,24 +89,24 @@ namespace SneakerOnlineShop.Pages.Account
                     if (acc.RoleId == 1)
                     {
                         var cust = await dBContext.Customers.Where(c => c.CustomerId.Equals(acc.CustomerId)).FirstOrDefaultAsync();
-                            cust.CustomerName = Customer.CustomerName;
-                            cust.CompanyName = Customer.CompanyName;
-                            cust.ContactName = Customer.ContactName;
-                            cust.ContactTitle = Customer.ContactTitle;
-                            cust.Address = Customer.Address;
-                            cust.Phone = Customer.Phone;
-                            Console.WriteLine("Company Name: " + cust.CompanyName);
-                            ViewData["CompanyName"] = cust.CompanyName;
-                            ViewData["CompanyTitle"] = cust.ContactTitle;
-                            ViewData["ContactName"] = cust.ContactName;
-                            ViewData["Address"] = cust.Address;
-                            ViewData["Phone"] = cust.Phone;
-                            if (await dBContext.SaveChangesAsync() > 0)
-                            {
-                                ViewData["msg"] = "Update successfully!";
-                            }
+                        cust.CustomerName = Customer.CustomerName;
+                        cust.CompanyName = Customer.CompanyName;
+                        cust.ContactName = Customer.ContactName;
+                        cust.ContactTitle = Customer.ContactTitle;
+                        cust.Address = Customer.Address;
+                        cust.Phone = Customer.Phone;
+                        Console.WriteLine("Company Name: " + cust.CompanyName);
+                        ViewData["CompanyName"] = cust.CompanyName;
+                        ViewData["CompanyTitle"] = cust.ContactTitle;
+                        ViewData["ContactName"] = cust.ContactName;
+                        ViewData["Address"] = cust.Address;
+                        ViewData["Phone"] = cust.Phone;
+                        if (await dBContext.SaveChangesAsync() > 0)
+                        {
+                            ViewData["msg"] = "Update successfully!";
                         }
-                        
+                    }
+
                 }
                 return Page();
             }
