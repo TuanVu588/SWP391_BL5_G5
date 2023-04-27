@@ -126,10 +126,17 @@
                 <div class="product" style="width: 20%; margin-bottom:10px">
                 @foreach (var i in p.ProductImages)
                 {
-                    <a href="~/product/detail"><img src="~/img/@i.ImagePath" width="100%" /></a>
-                    break;
+                    if (i.ImageId % 5 == 0)
+                    {
+                        <div id="product-img">
+                            <a href="~/admin/product/detail?id=@p.ProductId"><img src="~/img/@i.ImagePath" width="100%" /></a>
+                        </div>
+                    }
+               
+                  //  <a href="~/admin/product/detail?id=@p.ProductId"><img src="~/img/@i.ImagePath" width="100%" /></a>
+                    
                 }
-                    <div class="name"><a href="~/product/detail">@p.ProductName</a></div>
+                <div class="name"><a href="~/admin/product/detail?id=@p.ProductId">@p.ProductName</a></div>
                     <div class="price">@p.UnitPrice</div>
                 <div><a asp-page="/account/cart" asp-page-handler="buynow" asp-route-proid="@p.ProductId">Buy now</a></div>
                 </div>
