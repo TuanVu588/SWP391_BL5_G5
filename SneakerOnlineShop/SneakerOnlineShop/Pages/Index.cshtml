@@ -1,4 +1,5 @@
 ﻿@page
+@using SneakerOnlineShop.Models;
 @model SneakerOnlineShop.Pages.IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -129,14 +130,14 @@
                     if (i.ImageId % 5 == 0)
                     {
                         <div id="product-img">
-                            <a href="~/admin/product/detail?id=@p.ProductId"><img src="~/img/@i.ImagePath" width="100%" /></a>
+                            <img src="~/img/@i.ImagePath" width="100%" />
                         </div>
                     }
                
                   //  <a href="~/admin/product/detail?id=@p.ProductId"><img src="~/img/@i.ImagePath" width="100%" /></a>
                     
                 }
-                <div class="name"><a href="~/admin/product/detail?id=@p.ProductId">@p.ProductName</a></div>
+                <div class="name">@p.ProductName</div>
                     <div class="price">@p.UnitPrice</div>
                 <div><a asp-page="/account/cart" asp-page-handler="buynow" asp-route-proid="@p.ProductId">Buy now</a></div>
                 </div>
