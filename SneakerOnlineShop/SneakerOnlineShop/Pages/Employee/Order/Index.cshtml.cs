@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SneakerOnlineShop.Models;
+using System.Text.Json;
+
 
 namespace SneakerOnlineShop.Pages.Employee.Order
 {
@@ -10,7 +12,8 @@ namespace SneakerOnlineShop.Pages.Employee.Order
     {
         private readonly SWP391_DBContext _dbContext;
         IMapper _mapper;
-
+        //[BindProperty]
+        //public Models.Account? account { get; set; }
         public List<Models.Order> orders { get; set; }
         public IndexModel(SWP391_DBContext dBContext, IMapper mapper)
         {
@@ -19,16 +22,34 @@ namespace SneakerOnlineShop.Pages.Employee.Order
         }
         public async Task<IActionResult> OnGet(int eid, string fromDate, string toDate)
         {
-            if (string.IsNullOrEmpty(fromDate) && string.IsNullOrEmpty(toDate))
+            String? accountSession = HttpContext.Session.GetString("account");
+            if (accountSession is not null)
             {
-                getAllOrder(eid);
+                var account = JsonSerializer.Deserialize<Models.Account>(accountSession);
+                if (account is not null && account.RoleId == 2)
+                {
+                    if (string.IsNullOrEmpty(fromDate) && string.IsNullOrEmpty(toDate))
+                    {
+                        getAllOrder(eid);
+
+                    }
+                    else
+                    {
+                        OnGetFilterOrder(fromDate, toDate);
+                    }
+                    return Page();
+                }
+                else
+                {
+                    return Redirect("/account/login");
+                }
 
             }
             else
             {
-                OnGetFilterOrder(fromDate, toDate);
+                return Redirect("/account/login");
             }
-            return Page();
+
         }
 
         private void getAllOrder(int eid)
